@@ -1,2 +1,2 @@
 # lushthemes
-# -lushthemes
+# lushthemes
