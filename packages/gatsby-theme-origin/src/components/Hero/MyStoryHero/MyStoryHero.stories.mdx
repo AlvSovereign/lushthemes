@@ -1,0 +1,21 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+
+import MyStoryHero from './MyStoryHero';
+
+<Meta
+  title='Hero / MyStoryHero'
+  component={MyStoryHero}
+  decorators={[withThemeProvider]}
+/>
+
+# MyStoryHero
+
+With `MDX` we can define a story for `MyStoryHero` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name='Default'>
+    <MyStoryHero heading='Hello.' subHeading="I'm a designer and maker" />
+  </Story>
+</Preview>

@@ -1,0 +1,19 @@
+{
+  "name": "@lushthemes/the-story",
+  "version": "0.0.1",
+  "description": "The story website built with Origin Theme from GatsbyJS",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Alvin Sovereign <web@alvsovereign.com> (https://alvinsovereign.com)",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "@lushthemes/gatsby-theme-origin": "*",
+    "gatsby": "^2.23.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "theme-ui": "^0.3.1"
+  }
+}
