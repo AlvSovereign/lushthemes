@@ -7,39 +7,39 @@ const headingBase = {
   m: 0,
 };
 
-const bodyBase = {
+const textBase = {
   color: 'text',
   fontFamily: 'body',
   fontWeight: 'body',
-  m: 0,
+  mb: 3,
 };
 
 const Typography = {
   hero: {
     ...headingBase,
-    fontSize: 8,
+    fontSize: [7, 8, 9],
     lineHeight: 'heading',
   },
-  h1: {},
+  h1: { ...headingBase, fontSize: [5, 6, 7], lineHeight: 'heading' },
   h2: {
     ...headingBase,
-    fontSize: 6,
+    fontSize: [4, 5, 6],
     lineHeight: 'heading',
   },
   h3: {
     ...headingBase,
-    fontSize: 5,
+    fontSize: [3, 4, 5],
     lineHeight: 'heading',
   },
   h4: {
-    ...bodyBase,
+    ...textBase,
     fontSize: 4,
     fontWeight: 'body',
     lineHeight: 'body',
   },
   p: {
-    ...bodyBase,
-    fontSize: 0,
+    ...textBase,
+    fontSize: 1,
     fontWeight: 'body',
     lineHeight: 'body',
   },

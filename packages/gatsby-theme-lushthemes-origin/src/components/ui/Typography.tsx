@@ -1,7 +1,6 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
-import typography from '../../gatsby-plugin-theme-ui/typography';
 
 interface TypographyProps {
   children: ReactNode;
@@ -18,6 +17,7 @@ const Typography = ({
   ...rest
 }: TypographyProps) => {
   const Element = element;
+
   return (
     <Element sx={{ variant: `Typography.${variant}`, color }} {...rest}>
       {children}

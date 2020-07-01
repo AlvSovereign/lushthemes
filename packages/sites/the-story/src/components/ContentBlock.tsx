@@ -7,6 +7,7 @@ import BlockContent, {
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 
 import MyStoryHero from '../gatsby-theme-lushthemes-origin/components/Hero/MyStoryHero';
+import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
 
 interface ContentBlockProps {
   blocks: SanityBlockContent;
@@ -17,10 +18,32 @@ const config = {
   dataset: 'production',
 };
 
+const typoElementMapper = {
+  hero: 'h1',
+  h1: 'h1',
+  h2: 'h2',
+  normal: 'p',
+};
+
+const typeVariantMapper = {
+  hero: 'hero',
+  h1: 'h1',
+  h2: 'h2',
+  normal: 'p',
+};
+
 const serializers = {
   types: {
-    hero: ({ children, node }) => {
-      return <h1>{children}</h1>;
+    block: ({ children, node }) => {
+      const { style } = node;
+
+      return (
+        <Typography
+          element={typoElementMapper[style]}
+          variant={typeVariantMapper[style]}>
+          {children}
+        </Typography>
+      );
     },
     myStoryHero: ({ node }) => {
       const { content, image } = node;
@@ -29,11 +52,10 @@ const serializers = {
         { maxWidth: 800 },
         config
       );
-      console.log('fluidImage: ', fluidImage);
 
       return (
         <MyStoryHero fluidImage={fluidImage}>
-          {<BlockContent blocks={content} serializers={serializers} />}
+          <BlockContent blocks={content} serializers={serializers} />
         </MyStoryHero>
       );
     },

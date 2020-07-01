@@ -6,7 +6,6 @@ import { compose, graphql } from 'react-apollo';
 interface IndexProps {}
 
 const Index = (props: IndexProps) => {
-  console.log('props: ', props);
   return null;
 };
 

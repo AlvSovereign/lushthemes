@@ -1,16 +1,17 @@
 import Typography from './typography';
+import Shadows from './shadows';
 
 export default {
   useBorderBox: true,
   breakpoints: ['640px', '768px', '1440px'],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 52],
   fonts: {
     body:
       '"Sofia Pro", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [16, 20, 24, 28, 32, 40, 48, 56, 68],
+  fontSizes: [16, 20, 24, 28, 32, 40, 48, 56, 72, 84],
   fontWeights: {
     body: 500,
     heading: 900,
@@ -33,54 +34,6 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-    },
-    h1: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 5,
-    },
-    h2: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 4,
-    },
-    h3: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 3,
-    },
-    h4: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 2,
-    },
-    h5: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 1,
-    },
-    h6: {
-      color: 'text',
-      fontFamily: 'heading',
-      lineHeight: 'heading',
-      fontWeight: 'heading',
-      fontSize: 0,
-    },
-    p: {
-      color: 'text',
-      fontFamily: 'body',
-      fontWeight: 'body',
-      lineHeight: 'body',
     },
     a: {
       color: 'primary',
@@ -114,4 +67,5 @@ export default {
     },
   },
   Typography,
+  shadows: Shadows,
 };

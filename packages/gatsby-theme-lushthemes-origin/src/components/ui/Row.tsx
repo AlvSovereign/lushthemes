@@ -3,8 +3,10 @@ import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
 
 type FlexDirection = 'column' | 'row';
+type Alignment = 'center' | 'end' | 'inherit' | 'start';
 
 interface RowProps {
+  align?: Alignment | Alignment[];
   children: ReactNode;
   containerClassName?: string;
   direction: FlexDirection | FlexDirection[];
@@ -13,6 +15,7 @@ interface RowProps {
 }
 
 const Row = ({
+  align,
   children,
   containerClassName,
   direction,
@@ -27,11 +30,13 @@ const Row = ({
       {withContainer ? (
         <div
           sx={{
+            alignItems: align,
             display: 'flex',
             flexDirection: direction,
-            maxWidth: [550, 690, 1120],
-            width: '100%',
+            maxWidth: [566, 722, 1168],
             mx: 'auto',
+            px: [2, 4, 5],
+            width: '100%',
           }}>
           {children}
         </div>

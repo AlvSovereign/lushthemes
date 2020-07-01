@@ -8,7 +8,6 @@ interface IndexProps {
 }
 
 const MyStory = ({ pageContext }: IndexProps) => {
-  console.log('pageContext: ', pageContext);
   const pageData = pageContext.data._rawBody;
   return <ContentBlock blocks={pageData} />;
 };
