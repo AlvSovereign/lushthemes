@@ -4,7 +4,7 @@ import Shadows from './shadows';
 export default {
   useBorderBox: true,
   breakpoints: ['640px', '768px', '1440px'],
-  space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 52],
+  space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
     body:
       '"Sofia Pro", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',

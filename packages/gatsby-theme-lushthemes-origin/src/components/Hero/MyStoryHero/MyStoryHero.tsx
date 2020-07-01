@@ -7,21 +7,29 @@ import { Row, Typography } from '../../ui';
 
 interface MyStoryHeroProps {
   children: ReactNode;
+  className?: string;
   fluidImage: FluidObject | FluidObject[];
+  sx?: any; // <- any sx is converted to a `className` prop AT the component, thus cannot be passed through to the underlying component. Instead we pass the `className`. (https://github.com/system-ui/theme-ui/issues/396)
 }
 
-const MyStoryHero = ({ children, fluidImage }: MyStoryHeroProps) => {
+const MyStoryHero = ({
+  children,
+  className,
+  fluidImage,
+  sx,
+}: MyStoryHeroProps) => {
   return (
     <Row
       align={[null, null, 'center']}
+      className={className}
       direction={['column', 'column', 'row']}
       element='section'
-      sx={{ background: 'silver', py: 5 }}
+      sx={{ background: 'silver', py: 10, sx }}
       withContainer={true}>
-      <div sx={{ flex: 1, pr: [null, null, 9], pb: [5, 5, null] }}>
+      <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
         {children}
       </div>
-      <div sx={{ flex: 1.25, boxShadow: [2] }}>
+      <div sx={{ flex: 1, boxShadow: [2] }}>
         <Img fluid={fluidImage} />
       </div>
     </Row>

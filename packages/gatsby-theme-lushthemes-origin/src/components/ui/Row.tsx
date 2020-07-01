@@ -8,6 +8,7 @@ type Alignment = 'center' | 'end' | 'inherit' | 'start';
 interface RowProps {
   align?: Alignment | Alignment[];
   children: ReactNode;
+  className?: string;
   containerClassName?: string;
   direction: FlexDirection | FlexDirection[];
   element: any; // the string of a HTML element
@@ -17,6 +18,7 @@ interface RowProps {
 const Row = ({
   align,
   children,
+  className,
   containerClassName,
   direction,
   element,
@@ -26,7 +28,7 @@ const Row = ({
   const Element = element;
 
   return (
-    <Element {...rest}>
+    <Element className={className} {...rest}>
       {withContainer ? (
         <div
           sx={{

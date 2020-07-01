@@ -22,6 +22,7 @@ const typoElementMapper = {
   hero: 'h1',
   h1: 'h1',
   h2: 'h2',
+  h4: 'h4',
   normal: 'p',
 };
 
@@ -29,6 +30,7 @@ const typeVariantMapper = {
   hero: 'hero',
   h1: 'h1',
   h2: 'h2',
+  h4: 'h4',
   normal: 'p',
 };
 
