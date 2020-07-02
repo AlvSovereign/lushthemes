@@ -11,7 +11,7 @@ const textBase = {
   color: 'text',
   fontFamily: 'body',
   fontWeight: 'body',
-  mb: 3,
+  m: 0,
 };
 
 const Typography = {
@@ -32,7 +32,7 @@ const Typography = {
     lineHeight: 'heading',
   },
   h4: {
-    ...textBase,
+    ...headingBase,
     fontSize: 4,
     fontWeight: 'body',
     lineHeight: 'body',
@@ -42,6 +42,16 @@ const Typography = {
     fontSize: 1,
     fontWeight: 'body',
     lineHeight: 'body',
+  },
+  a: {
+    ...textBase,
+    textDecoration: 'none',
+  },
+  small: {
+    ...textBase,
+    fontSize: 0,
+    fontWeight: 'body',
+    lineHeight: 1,
   },
 };
 

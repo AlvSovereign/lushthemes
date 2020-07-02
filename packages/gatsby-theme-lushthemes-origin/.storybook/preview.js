@@ -1,10 +1,10 @@
 import { action } from '@storybook/addon-actions';
 import { addParameters } from '@storybook/react';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
-// import { addDecorator } from '@storybook/addons';
+import { addDecorator } from '@storybook/addons';
 // import { withThemeProvider } from 'storybook-addon-theme-ui';
 
-import * as themes from '../src/gatsby-plugin-theme-ui';
+import * as theme from '../src/gatsby-plugin-theme-ui';
 
 addParameters({
   docs: {
@@ -12,11 +12,12 @@ addParameters({
     page: DocsPage,
   },
   themeUi: {
-    themes: [{ theme: themes.default, name: 'main' }],
+    themes: [{ theme: theme.default, name: 'main' }],
   },
 });
 
 // addDecorator(withThemeProvider);
+// addDecorator((story) => <ThemeProvider theme={theme}>{story()}</ThemeProvider>);
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.

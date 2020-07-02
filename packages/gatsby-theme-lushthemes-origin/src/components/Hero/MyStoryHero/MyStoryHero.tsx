@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
 
-import { Row, Typography } from '../../ui';
+import { Row } from '../../ui';
 
 interface MyStoryHeroProps {
   children: ReactNode;
@@ -12,19 +12,14 @@ interface MyStoryHeroProps {
   sx?: any; // <- any sx is converted to a `className` prop AT the component, thus cannot be passed through to the underlying component. Instead we pass the `className`. (https://github.com/system-ui/theme-ui/issues/396)
 }
 
-const MyStoryHero = ({
-  children,
-  className,
-  fluidImage,
-  sx,
-}: MyStoryHeroProps) => {
+const MyStoryHero = ({ children, className, fluidImage }: MyStoryHeroProps) => {
   return (
     <Row
       align={[null, null, 'center']}
       className={className}
       direction={['column', 'column', 'row']}
       element='section'
-      sx={{ background: 'silver', py: 10, sx }}
+      sx={{ background: 'silver', py: 10 }}
       withContainer={true}>
       <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
         {children}

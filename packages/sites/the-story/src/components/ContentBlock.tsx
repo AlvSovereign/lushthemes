@@ -54,6 +54,7 @@ const serializers = {
         { maxWidth: 800 },
         config
       );
+      console.log('fluidImage: ', fluidImage);
 
       return (
         <MyStoryHero fluidImage={fluidImage}>

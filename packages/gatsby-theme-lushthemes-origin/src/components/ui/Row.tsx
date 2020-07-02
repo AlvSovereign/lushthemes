@@ -1,9 +1,10 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 
-type FlexDirection = 'column' | 'row';
 type Alignment = 'center' | 'end' | 'inherit' | 'start';
+type FlexDirection = 'column' | 'row';
+type Justify = 'around' | 'between' | 'center' | 'inherit' | 'start';
 
 interface RowProps {
   align?: Alignment | Alignment[];
@@ -12,6 +13,7 @@ interface RowProps {
   containerClassName?: string;
   direction: FlexDirection | FlexDirection[];
   element: any; // the string of a HTML element
+  justify?: Justify | Justify[];
   withContainer?: boolean;
 }
 
@@ -22,13 +24,17 @@ const Row = ({
   containerClassName,
   direction,
   element,
+  justify,
   withContainer,
   ...rest
 }: RowProps) => {
   const Element = element;
 
   return (
-    <Element className={className} {...rest}>
+    <Element
+      className={className}
+      sx={{ display: align || direction || justify ? 'flex' : 'inherit' }}
+      {...rest}>
       {withContainer ? (
         <div
           sx={{
@@ -43,7 +49,7 @@ const Row = ({
           {children}
         </div>
       ) : (
-        <>{children}</>
+        <Fragment>{children}</Fragment>
       )}
     </Element>
   );
