@@ -19,7 +19,7 @@ const MyStoryHero = ({ children, className, fluidImage }: MyStoryHeroProps) => {
       className={className}
       direction={['column', 'column', 'row']}
       element='section'
-      sx={{ background: 'silver', py: 10 }}
+      sx={{ background: 'silver', py: [100, 100, 120] }}
       withContainer={true}>
       <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
         {children}

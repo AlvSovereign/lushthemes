@@ -1,0 +1,108 @@
+import WorkExperience from './WorkExperience';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = {
+  downloadText: 'Download my resume here',
+  downloadUrl: {
+    _type: 'file',
+    asset: {
+      _id: 'file-cf29bda9f81740c63fd8cc20f81a73ccc37611a3-pdf',
+      _type: 'sanity.fileAsset',
+      _rev: 'IT2L0aqWToOorOcvdWVQg5',
+      _createdAt: '2020-07-03T23:18:12Z',
+      _updatedAt: '2020-07-03T23:18:12Z',
+      assetId: 'cf29bda9f81740c63fd8cc20f81a73ccc37611a3',
+      extension: 'pdf',
+      mimeType: 'application/pdf',
+      originalFilename: 'Resume-Science-Example-2017.6bbf0942.pdf',
+      path:
+        'files/7805c5hv/production/cf29bda9f81740c63fd8cc20f81a73ccc37611a3.pdf',
+      sha1hash: 'cf29bda9f81740c63fd8cc20f81a73ccc37611a3',
+      size: 80010,
+      uploadId: 'UrwVTXdqtE9u6Az9Ehd2p7ryd090JNse',
+      url:
+        'https://cdn.sanity.io/files/7805c5hv/production/cf29bda9f81740c63fd8cc20f81a73ccc37611a3.pdf',
+      id: 'file-cf29bda9f81740c63fd8cc20f81a73ccc37611a3-pdf',
+      parent: null,
+      children: [],
+      internal: {
+        type: 'SanityFileAsset',
+        contentDigest: '37320515b22919f77518aa5a3f54f792',
+        counter: 44,
+        owner: 'gatsby-source-sanity',
+      },
+    },
+  },
+  introText:
+    'Write like a human. Don’t be afraid to break a few rules if it makes your writing more relatable. All of our content, from splashy homepage copy to system alerts, should be warm and human.',
+  listData: [
+    {
+      _key: '633d41ffff01',
+      _type: 'workExperience',
+      duration: 'May 19 - June 20',
+      link: 'See Idean UK',
+      name: 'Idean UK',
+      position: 'Front End Developer',
+      role:
+        'Product design as a verb is to create a new product to be sold by a business to its customers.',
+      url: 'https://www.idean.com/',
+    },
+    {
+      _key: '3becbe68471a',
+      _type: 'workExperience',
+      duration: 'May 18 - May 19',
+      link: "See DixonsCarphone (Curry's)",
+      name: 'Dixons Carphone',
+      position: 'Analytics Developer',
+      role:
+        'Product design as a verb is to create a new product to be sold by a business to its customers.',
+      url: 'https://www.currys.co.uk/',
+    },
+    {
+      _key: '936f4ee7738b',
+      _type: 'workExperience',
+      duration: 'May 17 - Dec 17',
+      link: 'See BBC Microbit',
+      name: 'BBC Micro:bit',
+      position: 'Front End Web Developer',
+      role:
+        'Product design as a verb is to create a new product to be sold by a business to its customers.',
+      url: 'https://www.microbit.org/',
+    },
+    {
+      _key: 'dde8893a5d2a',
+      _type: 'workExperience',
+      duration: 'Jan 17 - Jan 18',
+      link: 'See Homelyfe',
+      name: 'Homelyfe/Aventus',
+      position: 'Front End Engineer',
+      role:
+        'Product design as a verb is to create a new product to be sold by a business to its customers.',
+      url: 'https://www.homelyfe.com/',
+    },
+  ],
+  title: 'Work Experience.',
+};
+
+<Meta
+  title='Content / WorkExperience'
+  component={WorkExperience}
+  decorators={[withThemeProvider]}
+/>
+
+# WorkExperience
+
+With `MDX` we can define a story for `WorkExperience` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name='Default'>
+    <WorkExperience
+      downloadUrl={exampleData.downloadUrl}
+      downloadText={exampleData.downloadText}
+      introText={exampleData.introText}
+      listData={exampleData.listData}
+      title={exampleData.title}
+    />
+  </Story>
+</Preview>

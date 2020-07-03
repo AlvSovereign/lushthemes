@@ -12,6 +12,8 @@ import author from './author';
 
 import page from './page';
 import myStoryHero from './contentType/hero/my-story-hero';
+import workExperienceSection from './contentType/contentBlock/work-experience';
+import workExperience from './contentType/references/work-experience';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,9 +29,11 @@ export default createSchema({
     category,
     page,
     // The following are block content components
+    workExperienceSection,
     myStoryHero,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
+    workExperience,
     blockContent,
   ]),
 });

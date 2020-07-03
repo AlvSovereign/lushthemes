@@ -1,5 +1,3 @@
-import { brotliDecompressSync } from 'zlib';
-
 const headingBase = {
   color: 'text',
   fontFamily: 'heading',
@@ -19,8 +17,9 @@ const Typography = {
     ...headingBase,
     fontSize: [7, 8, 9],
     lineHeight: 'heading',
+    mb: 6,
   },
-  h1: { ...headingBase, fontSize: [5, 6, 7], lineHeight: 'heading' },
+  h1: { ...headingBase, fontSize: [5, 6, 7], lineHeight: 'heading', mb: 5 },
   h2: {
     ...headingBase,
     fontSize: [4, 5, 6],
@@ -33,9 +32,8 @@ const Typography = {
   },
   h4: {
     ...headingBase,
-    fontSize: 4,
-    fontWeight: 'body',
-    lineHeight: 'body',
+    fontSize: [2, 3, 4],
+    lineHeight: 'heading',
   },
   p: {
     ...textBase,
@@ -45,7 +43,6 @@ const Typography = {
   },
   a: {
     ...textBase,
-    textDecoration: 'none',
   },
   small: {
     ...textBase,

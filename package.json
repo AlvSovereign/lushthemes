@@ -1,7 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "packages/gatsby-theme-lushthemes-origin",
-    "packages/sites/*"
+    "packages/sites/*",
+    "packages/*"
   ]
 }

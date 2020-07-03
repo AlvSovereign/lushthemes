@@ -6,8 +6,8 @@ interface TypographyProps {
   children: ReactNode;
   color?: 'olive';
   element: any; // the string of a HTML element
-  variant: 'hero' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'small';
-  rest?: any;
+  variant: 'hero' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'small' | 'span';
+  [key: string]: any;
 }
 
 const Typography = ({

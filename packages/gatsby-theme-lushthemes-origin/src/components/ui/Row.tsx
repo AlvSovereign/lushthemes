@@ -5,6 +5,7 @@ import { Fragment, ReactNode } from 'react';
 type Alignment = 'center' | 'end' | 'inherit' | 'start';
 type FlexDirection = 'column' | 'row';
 type Justify = 'around' | 'between' | 'center' | 'inherit' | 'start';
+type Wrap = 'nowrap' | 'wrap';
 
 interface RowProps {
   align?: Alignment | Alignment[];
@@ -15,6 +16,8 @@ interface RowProps {
   element: any; // the string of a HTML element
   justify?: Justify | Justify[];
   withContainer?: boolean;
+  wrap?: Wrap | Wrap[];
+  [key: string]: any;
 }
 
 const Row = ({
@@ -26,6 +29,7 @@ const Row = ({
   element,
   justify,
   withContainer,
+  wrap,
   ...rest
 }: RowProps) => {
   const Element = element;
@@ -33,7 +37,11 @@ const Row = ({
   return (
     <Element
       className={className}
-      sx={{ display: align || direction || justify ? 'flex' : 'inherit' }}
+      sx={{
+        display: align || direction || justify ? 'flex' : 'inherit',
+        flexDirection: direction,
+        flexWrap: wrap,
+      }}
       {...rest}>
       {withContainer ? (
         <div

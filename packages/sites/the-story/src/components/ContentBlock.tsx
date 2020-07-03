@@ -8,6 +8,7 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 
 import MyStoryHero from '../gatsby-theme-lushthemes-origin/components/Hero/MyStoryHero';
 import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
+import WorkExperience from 'gatsby-theme-lushthemes-origin/src/components/ContentBlock/WorkExperience';
 
 interface ContentBlockProps {
   blocks: SanityBlockContent;
@@ -54,12 +55,30 @@ const serializers = {
         { maxWidth: 800 },
         config
       );
-      console.log('fluidImage: ', fluidImage);
 
       return (
         <MyStoryHero fluidImage={fluidImage}>
           <BlockContent blocks={content} serializers={serializers} />
         </MyStoryHero>
+      );
+    },
+    workExperienceSection: ({ node }) => {
+      const {
+        downloadText,
+        downloadUrl,
+        introText,
+        listExperience,
+        title,
+      } = node;
+
+      return (
+        <WorkExperience
+          downloadUrl={downloadUrl.asset.url}
+          downloadText={downloadText}
+          introText={introText}
+          listData={listExperience}
+          title={title}
+        />
       );
     },
   },

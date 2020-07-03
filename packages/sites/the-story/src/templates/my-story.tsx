@@ -13,7 +13,6 @@ const MyStory = ({ pageContext }: IndexProps) => {
   return (
     <Fragment>
       <ContentBlock blocks={pageData} />
-      <WorkExperience title='Work Experience.' />
     </Fragment>
   );
 };
