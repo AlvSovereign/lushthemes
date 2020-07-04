@@ -68,5 +68,8 @@ export default {
     {
       type: 'workExperienceSection',
     },
+    {
+      type: 'simpleMedia',
+    },
   ],
 };

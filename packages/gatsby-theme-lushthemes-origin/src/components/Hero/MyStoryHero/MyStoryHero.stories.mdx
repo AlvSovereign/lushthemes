@@ -1,5 +1,5 @@
 import MyStoryHero from './MyStoryHero';
-import {Typography} from '../../ui'
+import { Typography } from '../../ui';
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { withThemeProvider } from 'storybook-addon-theme-ui';
 const fluidImage = {
@@ -16,7 +16,7 @@ const fluidImage = {
 };
 
 <Meta
-  title='Hero / MyStoryHero'
+  title='Blocks / Hero / MyStoryHero'
   component={MyStoryHero}
   decorators={[withThemeProvider]}
 />
@@ -30,8 +30,17 @@ markdown documentation.
   <Story name='Default'>
     <MyStoryHero fluidImage={fluidImage}>
       <Typography element='h1' variant='hero'>{`Hello 👋`}</Typography>
-      <Typography element='h2' variant='h2'>I'm a React Specialist</Typography>
-      <Typography element='p' variant='p'>Olly is a graphic designer from Bohn who currently resides in cold Hamburg, Germany. In 2008, he graduated with in Graphic Design from Fake Berlin College. That may seem like centuries ago in internet years, but don’t worry, this hyperbolic old dog is on top of all the new tricks. Olly enjoys houseplants and has a deep (fried) love for chicken. He is currently available for freelance projects.</Typography>
+      <Typography element='h2' variant='h2'>
+        I'm a React Specialist
+      </Typography>
+      <Typography element='p' variant='p'>
+        Olly is a graphic designer from Bohn who currently resides in cold
+        Hamburg, Germany. In 2008, he graduated with in Graphic Design from Fake
+        Berlin College. That may seem like centuries ago in internet years, but
+        don’t worry, this hyperbolic old dog is on top of all the new tricks.
+        Olly enjoys houseplants and has a deep (fried) love for chicken. He is
+        currently available for freelance projects.
+      </Typography>
     </MyStoryHero>
   </Story>
 </Preview>

@@ -1,14 +1,18 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
-import React from 'react';
+import { Fragment } from 'react';
 import BlockContent, {
   SanityBlockContent,
 } from '@sanity/block-content-to-react';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
+import Img from 'gatsby-image';
 
-import MyStoryHero from '../gatsby-theme-lushthemes-origin/components/Hero/MyStoryHero';
 import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
-import WorkExperience from 'gatsby-theme-lushthemes-origin/src/components/ContentBlock/WorkExperience';
+import {
+  MyStoryHero,
+  SimpleMedia,
+  WorkExperience,
+} from '../gatsby-theme-lushthemes-origin/components';
 
 interface ContentBlockProps {
   blocks: SanityBlockContent;
@@ -60,6 +64,25 @@ const serializers = {
         <MyStoryHero fluidImage={fluidImage}>
           <BlockContent blocks={content} serializers={serializers} />
         </MyStoryHero>
+      );
+    },
+    simpleMedia: ({ node }) => {
+      console.log('node: ', node);
+      const { alt = null, caption = null, image = null, media = null } = node;
+      const fluidImage =
+        image && getFluidGatsbyImage(image.asset.id, { maxWidth: 800 }, config);
+
+      return (
+        <SimpleMedia caption={caption}>
+          <Fragment>
+            {fluidImage && <Img fluid={fluidImage} alt={alt} />}
+            {media && (
+              <video controls={true} sx={{ width: '100%' }}>
+                <source src={media.asset.url} type='video/mp4' />
+              </video>
+            )}
+          </Fragment>
+        </SimpleMedia>
       );
     },
     workExperienceSection: ({ node }) => {

@@ -19,7 +19,12 @@ const Layout = ({ children }) => (
           mx: 'auto',
         }}>
         <header
-          sx={{ bg: 'silver', color: 'white', fontFamily: 'heading', p: 3 }}>
+          sx={{
+            bg: 'o-silver',
+            color: 'white',
+            fontFamily: 'heading',
+            p: 3,
+          }}>
           gatsby-theme-docs
         </header>
         <main sx={{ mx: 'auto', width: '100%' }}>{children}</main>

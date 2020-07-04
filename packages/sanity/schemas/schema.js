@@ -12,6 +12,7 @@ import author from './author';
 
 import page from './page';
 import myStoryHero from './contentType/hero/my-story-hero';
+import simpleMedia from './contentType/mediaBlock/simpleMedia';
 import workExperienceSection from './contentType/contentBlock/work-experience';
 import workExperience from './contentType/references/work-experience';
 
@@ -34,6 +35,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     workExperience,
+    simpleMedia,
     blockContent,
   ]),
 });

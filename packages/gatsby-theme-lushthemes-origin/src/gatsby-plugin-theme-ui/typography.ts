@@ -13,6 +13,15 @@ const textBase = {
 };
 
 const Typography = {
+  a: {
+    ...textBase,
+  },
+  figcaption: {
+    ...textBase,
+    color: 'grey',
+    fontSize: 0,
+    fontStyle: 'italic',
+  },
   hero: {
     ...headingBase,
     fontSize: [7, 8, 9],
@@ -40,9 +49,6 @@ const Typography = {
     fontSize: 1,
     fontWeight: 'body',
     lineHeight: 'body',
-  },
-  a: {
-    ...textBase,
   },
   small: {
     ...textBase,

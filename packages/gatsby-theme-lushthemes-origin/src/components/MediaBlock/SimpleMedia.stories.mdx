@@ -1,0 +1,32 @@
+import SimpleMedia from './SimpleMedia';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = {
+  caption: "Stock Video by Cristian Dina from Pexels.",
+  media: {
+    asset: {
+      url: "https://cdn.sanity.io/files/7805c5hv/production/bb64749259d1e977c80be41de697630de2f42004.mp4",
+    }
+  }
+};
+
+<Meta
+  title='Blocks / Media Content / SimpleMedia'
+  component={SimpleMedia}
+  decorators={[withThemeProvider]}
+/>
+
+# WorkExperience
+
+With `MDX` we can define a story for `WorkExperience` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name='Default'>
+      <SimpleMedia caption={exampleData.caption}>
+        <video controls={true} style={{ width: '100%' }}>
+          <source src={exampleData.media.asset.url} type='video/mp4' />
+        </video>
+      </SimpleMedia>
+  </Story>
+</Preview>

@@ -86,7 +86,7 @@ const WorkExperience = ({
             variant='p'>
             {d.role}
           </Typography>
-          <hr sx={{ color: 'silver' }} />
+          <hr sx={{ color: 'o-silver' }} />
           <a href={d.url} target='_blank' sx={{ variant: 'Typography.a' }}>
             <Typography
               element='span'

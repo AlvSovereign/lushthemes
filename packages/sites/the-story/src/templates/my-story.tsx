@@ -2,7 +2,6 @@
 import { jsx } from 'theme-ui';
 import { Fragment } from 'react';
 import ContentBlock from '../components/ContentBlock';
-import WorkExperience from 'gatsby-theme-lushthemes-origin/src/components/ContentBlock/WorkExperience';
 
 interface IndexProps {
   pageContext: any;
@@ -10,6 +9,7 @@ interface IndexProps {
 
 const MyStory = ({ pageContext }: IndexProps) => {
   const pageData = pageContext.data._rawBody;
+
   return (
     <Fragment>
       <ContentBlock blocks={pageData} />

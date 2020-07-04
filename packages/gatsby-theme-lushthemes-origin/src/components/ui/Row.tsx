@@ -12,6 +12,7 @@ interface RowProps {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
+  display?: string;
   direction: FlexDirection | FlexDirection[];
   element: any; // the string of a HTML element
   justify?: Justify | Justify[];
@@ -26,6 +27,7 @@ const Row = ({
   className,
   containerClassName,
   direction,
+  display,
   element,
   justify,
   withContainer,
@@ -38,7 +40,7 @@ const Row = ({
     <Element
       className={className}
       sx={{
-        display: align || direction || justify ? 'flex' : 'inherit',
+        display: display || align || direction || justify ? 'flex' : 'inherit',
         flexDirection: direction,
         flexWrap: wrap,
       }}

@@ -1,7 +1,8 @@
-import MyStoryHero from '../components/Hero/MyStoryHero/MyStoryHero';
+import { MyStoryHero, WorkExperience } from '../components';
 import Typography from '../components/ui/Typography';
 
 export default {
   MyStoryHero,
+  WorkExperience,
   Typography,
 };

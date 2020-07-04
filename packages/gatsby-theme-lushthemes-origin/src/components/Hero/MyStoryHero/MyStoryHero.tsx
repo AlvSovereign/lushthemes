@@ -12,6 +12,7 @@ interface MyStoryHeroProps {
   sx?: any; // <- any sx is converted to a `className` prop AT the component, thus cannot be passed through to the underlying component. Instead we pass the `className`. (https://github.com/system-ui/theme-ui/issues/396)
 }
 
+// TODO: Add IMAGE ALT prop
 const MyStoryHero = ({ children, className, fluidImage }: MyStoryHeroProps) => {
   return (
     <Row
@@ -19,7 +20,7 @@ const MyStoryHero = ({ children, className, fluidImage }: MyStoryHeroProps) => {
       className={className}
       direction={['column', 'column', 'row']}
       element='section'
-      sx={{ background: 'silver', py: [100, 100, 120] }}
+      sx={{ backgroundColor: 'silver', py: [100, 100, 120] }}
       withContainer={true}>
       <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
         {children}
