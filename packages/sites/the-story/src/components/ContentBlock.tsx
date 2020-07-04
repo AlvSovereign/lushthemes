@@ -78,7 +78,7 @@ const serializers = {
             {fluidImage && <Img fluid={fluidImage} alt={alt} />}
             {media && (
               <video controls={true} sx={{ width: '100%' }}>
-                <source src={media.asset.url} type='video/mp4' />
+                <source src={media.asset.url} type={media.asset.mimeType} />
               </video>
             )}
           </Fragment>
