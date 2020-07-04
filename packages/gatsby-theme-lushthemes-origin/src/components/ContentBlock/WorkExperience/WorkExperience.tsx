@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { Row, Typography } from '../ui';
+import { Row, Typography } from '../../ui';
 
 type TListData = {
   name: string;

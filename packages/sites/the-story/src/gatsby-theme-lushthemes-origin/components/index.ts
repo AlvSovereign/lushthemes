@@ -1,7 +1,8 @@
 import MyStoryHero from './Hero/MyStoryHero';
 
-import WorkExperience from './ContentBlock/WorkExperience';
+import Awards from './ContentBlock/Awards/Awards';
+import WorkExperience from './ContentBlock/WorkExperience/WorkExperience';
 
 import SimpleMedia from './MediaBlock/SimpleMedia';
 
-export { MyStoryHero, SimpleMedia, WorkExperience };
+export { Awards, MyStoryHero, SimpleMedia, WorkExperience };

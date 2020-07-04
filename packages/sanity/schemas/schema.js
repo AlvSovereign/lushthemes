@@ -15,6 +15,8 @@ import myStoryHero from './contentType/hero/my-story-hero';
 import simpleMedia from './contentType/mediaBlock/simpleMedia';
 import workExperienceSection from './contentType/contentBlock/work-experience';
 import workExperience from './contentType/references/work-experience';
+import awards from './contentType/references/awards';
+import awardsSection from './contentType/contentBlock/awards';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,6 +38,8 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     workExperience,
     simpleMedia,
+    awards,
+    awardsSection,
     blockContent,
   ]),
 });

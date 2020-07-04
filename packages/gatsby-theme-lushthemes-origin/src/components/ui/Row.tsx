@@ -4,7 +4,12 @@ import { Fragment, ReactNode } from 'react';
 
 type Alignment = 'center' | 'end' | 'inherit' | 'start';
 type FlexDirection = 'column' | 'row';
-type Justify = 'around' | 'between' | 'center' | 'inherit' | 'start';
+type Justify =
+  | 'space-around'
+  | 'space-between'
+  | 'center'
+  | 'inherit'
+  | 'start';
 type Wrap = 'nowrap' | 'wrap';
 
 interface RowProps {
@@ -43,6 +48,7 @@ const Row = ({
         display: display || align || direction || justify ? 'flex' : 'inherit',
         flexDirection: direction,
         flexWrap: wrap,
+        justifyContent: justify,
       }}
       {...rest}>
       {withContainer ? (

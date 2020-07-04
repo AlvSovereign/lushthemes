@@ -9,6 +9,7 @@ import Img from 'gatsby-image';
 
 import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
 import {
+  Awards,
   MyStoryHero,
   SimpleMedia,
   WorkExperience,
@@ -52,6 +53,11 @@ const serializers = {
         </Typography>
       );
     },
+    awardsSection: ({ node }) => {
+      const { awardsList, listTitle, title } = node;
+
+      return <Awards listTitle={listTitle} list={awardsList} title={title} />;
+    },
     myStoryHero: ({ node }) => {
       const { content, image } = node;
       const fluidImage = getFluidGatsbyImage(
@@ -67,7 +73,6 @@ const serializers = {
       );
     },
     simpleMedia: ({ node }) => {
-      console.log('node: ', node);
       const { alt = null, caption = null, image = null, media = null } = node;
       const fluidImage =
         image && getFluidGatsbyImage(image.asset.id, { maxWidth: 800 }, config);

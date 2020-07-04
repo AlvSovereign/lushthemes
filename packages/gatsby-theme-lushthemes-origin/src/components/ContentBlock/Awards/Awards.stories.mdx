@@ -1,0 +1,50 @@
+import Awards from './Awards';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = {
+  list: [
+    {
+      award: 'Site of the day',
+      awardedBy: 'Awwwards',
+      date: '2018',
+    },
+    {
+      award: 'UX Design',
+      awardedBy: 'Dribbble',
+      date: '2017',
+    },
+    {
+      award: 'Motion Design',
+      awardedBy: 'Behance',
+      date: '2016',
+    },
+    {
+      award: 'Best UI Work',
+      awardedBy: 'Muzli',
+      date: '2015',
+    },
+  ],
+  listTitle: 'Honours and Trophies.',
+  title: 'Awards.',
+};
+
+<Meta
+  title='Blocks / ContentBlock / Awards'
+  component={Awards}
+  decorators={[withThemeProvider]}
+/>
+
+# Awards
+
+With `MDX` we can define a story for `Awards` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name='Default'>
+    <Awards
+      listTitle={exampleData.listTitle}
+      list={exampleData.list}
+      title={exampleData.title}
+    />
+  </Story>
+</Preview>
