@@ -80,9 +80,11 @@ const serializers = {
       return (
         <SimpleMedia caption={caption}>
           <Fragment>
-            {fluidImage && <Img fluid={fluidImage} alt={alt} />}
+            {fluidImage && (
+              <Img fluid={fluidImage} alt={alt} sx={{ boxShadow: 2 }} />
+            )}
             {media && (
-              <video controls={true} sx={{ width: '100%' }}>
+              <video controls={true} sx={{ boxShadow: 2, width: '100%' }}>
                 <source src={media.asset.url} type={media.asset.mimeType} />
               </video>
             )}

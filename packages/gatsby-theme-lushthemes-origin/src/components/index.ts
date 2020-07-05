@@ -1,7 +1,8 @@
 import MyStoryHero from './Hero/MyStoryHero/MyStoryHero';
 
-import WorkExperience from './ContentBlock/WorkExperience';
+import StoryFooter from './ContentBlock/Footers/StoryFooter';
+import WorkExperience from './ContentBlock/WorkExperience/WorkExperience';
 
 import SimpleMedia from './MediaBlock/SimpleMedia';
 
-export { MyStoryHero, SimpleMedia, WorkExperience };
+export { MyStoryHero, SimpleMedia, StoryFooter, WorkExperience };

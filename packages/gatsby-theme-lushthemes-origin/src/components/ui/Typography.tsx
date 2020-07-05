@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
 
-type Alignment = 'end' | 'flex' | 'start';
+type Alignment = 'center' | 'left' | 'right';
 interface TypographyProps {
   align?: Alignment;
   children: ReactNode;

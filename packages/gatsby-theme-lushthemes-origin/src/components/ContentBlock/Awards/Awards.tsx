@@ -23,7 +23,7 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
       element='section'
       sx={{ backgroundColor: 'black', py: [100, 100, 120] }}
       withContainer={true}>
-      <Typography element='h2' sx={{ color: 'white', flex: 1 }} variant='hero'>
+      <Typography element='h2' sx={{ color: 'white', flex: 1 }} variant='h2'>
         {title}
       </Typography>
       <Row

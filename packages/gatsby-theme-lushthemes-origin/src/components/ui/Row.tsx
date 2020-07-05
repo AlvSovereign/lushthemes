@@ -2,13 +2,14 @@
 import { jsx } from 'theme-ui';
 import { Fragment, ReactNode } from 'react';
 
-type Alignment = 'center' | 'end' | 'inherit' | 'start';
+type Alignment = 'center' | 'end' | 'inherit' | 'flex-start';
 type FlexDirection = 'column' | 'row';
 type Justify =
-  | 'space-around'
-  | 'space-between'
   | 'center'
   | 'inherit'
+  | 'space-around'
+  | 'space-between'
+  | 'space-evenly'
   | 'start';
 type Wrap = 'nowrap' | 'wrap';
 
@@ -45,6 +46,7 @@ const Row = ({
     <Element
       className={className}
       sx={{
+        alignItems: align,
         display: display || align || direction || justify ? 'flex' : 'inherit',
         flexDirection: direction,
         flexWrap: wrap,
@@ -57,7 +59,7 @@ const Row = ({
             alignItems: align,
             display: 'flex',
             flexDirection: direction,
-            maxWidth: [566, 722, 1168],
+            maxWidth: [584, 722, 1232],
             mx: 'auto',
             px: [2, 4, 5],
             width: '100%',

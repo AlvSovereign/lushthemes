@@ -39,7 +39,7 @@ const Typography = {
   h2: {
     ...headingBase,
     fontSize: [4, 5, 6],
-    letterSpacing: '-1px',
+    letterSpacing: '-2px',
     lineHeight: 'heading',
   },
   h3: {
@@ -65,6 +65,12 @@ const Typography = {
     fontSize: 0,
     fontWeight: 'body',
     lineHeight: 1,
+  },
+  span: {
+    ...textBase,
+    fontSize: 1,
+    fontWeight: 'body',
+    lineHeight: 'body',
   },
 };
 

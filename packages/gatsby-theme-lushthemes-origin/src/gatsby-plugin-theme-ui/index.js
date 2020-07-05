@@ -1,13 +1,14 @@
-import Typography from './typography';
+import Button from './button';
 import Shadows from './shadows';
+import Typography from './typography';
 
 export default {
   useBorderBox: true,
-  breakpoints: ['640px', '768px', '1440px'],
+  breakpoints: ['600px', '768px', '1280px'],
   space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
     body:
-      '"Sofia Pro", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -66,6 +67,7 @@ export default {
       maxWidth: '100%',
     },
   },
+  Button,
   Typography,
   shadows: Shadows,
 };

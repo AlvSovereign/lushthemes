@@ -3,5 +3,17 @@
   "workspaces": [
     "packages/sites/*",
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "eslint --ignore-path .gitignore . --fix"
+    }
+  }
 }

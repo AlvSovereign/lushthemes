@@ -1,4 +1,5 @@
+import Button from 'gatsby-theme-lushthemes-origin/src/components/ui/Button';
 import Row from 'gatsby-theme-lushthemes-origin/src/components/ui/Row';
-import Typography from './Typography';
+import Typography from 'gatsby-theme-lushthemes-origin/src/components/ui/Typography';
 
-export { Row, Typography };
+export { Button, Row, Typography };

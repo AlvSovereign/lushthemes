@@ -8,6 +8,7 @@ interface RightArrowProps {
 }
 
 const RightArrow = ({
+  fill = '#000',
   height = 18,
   viewBox = '0 0 18 18',
   width = 18,
@@ -19,7 +20,7 @@ const RightArrow = ({
         fillRule='evenodd'
         clipRule='evenodd'
         d='M18 8.966L9.05 0 6.33 2.704l4.41 4.384H0v3.824h10.74l-4.41 4.384L9.05 18 18 8.966z'
-        fill='#000'
+        fill={fill}
       />
     </svg>
   );

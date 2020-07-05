@@ -25,7 +25,7 @@ const MyStoryHero = ({ children, className, fluidImage }: MyStoryHeroProps) => {
       <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
         {children}
       </div>
-      <div sx={{ flex: 1, boxShadow: [2] }}>
+      <div sx={{ flex: 1, boxShadow: 2 }}>
         <Img fluid={fluidImage} />
       </div>
     </Row>

@@ -1,6 +1,6 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
-import { Fragment, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Row } from '../ui';
 
 interface SimpleMediaProps {
@@ -15,13 +15,14 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => {
       display='block'
       direction='column'
       element='section'
+      sx={{ py: [100, 100, 120] }}
       withContainer={true}>
       <Row
         align='center'
         direction='column'
         element='figure'
         justify='center'
-        sx={{ backgroundColor: 'olive', m: 0 }}>
+        sx={{ m: 0 }}>
         {children}
         {caption && (
           <Row
@@ -31,9 +32,10 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => {
             justify='center'
             sx={{
               textAlign: 'center',
-              backgroundColor: 'background',
+              bg: 'transparent',
               py: 6,
               variant: 'Typography.figcaption',
+              width: '100%',
             }}>
             {caption}
           </Row>

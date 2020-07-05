@@ -2,6 +2,7 @@
 import { jsx } from 'theme-ui';
 import { Fragment } from 'react';
 import ContentBlock from '../components/ContentBlock';
+import StoryFooter from '../gatsby-theme-lushthemes-origin/components/ContentBlock/Footer/StoryFooter';
 
 interface IndexProps {
   pageContext: any;
@@ -13,6 +14,7 @@ const MyStory = ({ pageContext }: IndexProps) => {
   return (
     <Fragment>
       <ContentBlock blocks={pageData} />
+      <StoryFooter />
     </Fragment>
   );
 };

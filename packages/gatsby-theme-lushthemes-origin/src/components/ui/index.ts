@@ -1,4 +1,5 @@
+import Button from './Button';
 import Row from './Row';
 import Typography from './Typography';
 
-export { Row, Typography };
+export { Button, Row, Typography };
