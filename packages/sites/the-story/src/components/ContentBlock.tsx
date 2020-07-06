@@ -12,6 +12,7 @@ import {
   Awards,
   MyStoryHero,
   SimpleMedia,
+  StoryFooter,
   WorkExperience,
 } from '../gatsby-theme-lushthemes-origin/components';
 
@@ -90,6 +91,13 @@ const serializers = {
             )}
           </Fragment>
         </SimpleMedia>
+      );
+    },
+    storyFooter: ({ node }) => {
+      const { address, contact, ...rest } = node;
+
+      return (
+        <StoryFooter address={address[0]} contact={contact[0]} {...rest} />
       );
     },
     workExperienceSection: ({ node }) => {

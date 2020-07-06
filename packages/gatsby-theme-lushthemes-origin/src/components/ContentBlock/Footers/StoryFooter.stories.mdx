@@ -1,0 +1,53 @@
+import StoryFooter from './StoryFooter';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const data = {
+  address: {
+    line1: 'Flat 22, 31 Origin Heights',
+    line2: 'Origin Road',
+    line3: null,
+    city: 'London',
+    district: null,
+    postCode: 'N1 1OR',
+  },
+  addressTitle: 'Visit me.',
+  contact: {
+    email: 'ollie@origin.com',
+    phone: '+41 9912 882 345',
+  },
+  contactTitle: 'Contact me.',
+  socialLinks: [
+    { name: 'facebook', href: 'https:www.google.com' },
+    { name: 'instagram', href: 'https:www.google.com' },
+    { name: 'dribble', href: 'https:www.google.com' },
+    { name: 'behance', href: 'https:www.google.com' },
+  ],
+  subtitle:
+    'I love to collab with curious and smart. Let’s do great things together!',
+  title: 'Got an idea?',
+};
+
+<Meta
+  title='Blocks / Content / StoryFooter'
+  component={StoryFooter}
+  decorators={[withThemeProvider]}
+/>
+
+# Awards
+
+With `MDX` we can define a story for `Awards` right in the middle of our
+markdown documentation.
+
+<Preview>
+  <Story name='Default'>
+    <StoryFooter
+      address={data.address}
+      addressTitle={data.addressTitle}
+      contact={data.contact}
+      contactTitle={data.contactTitle}
+      socialLinks={data.socialLinks}
+      subtitle={data.subtitle}
+      title={data.title}
+    />
+  </Story>
+</Preview>

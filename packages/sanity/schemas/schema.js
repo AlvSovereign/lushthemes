@@ -11,12 +11,17 @@ import post from './post';
 import author from './author';
 
 import page from './page';
-import myStoryHero from './contentType/hero/my-story-hero';
+import myStoryHero from './contentType/blocks/content/my-story-hero';
 import simpleMedia from './contentType/mediaBlock/simpleMedia';
-import workExperienceSection from './contentType/contentBlock/work-experience';
+import workExperienceSection from './contentType/blocks/content/work-experience';
 import workExperience from './contentType/references/work-experience';
 import awards from './contentType/references/awards';
-import awardsSection from './contentType/contentBlock/awards';
+import awardsSection from './contentType/blocks/content/awards';
+import storyFooter from './contentType/blocks/footers/story-footer';
+
+import address from './contentType/references/address';
+import contactLink from './contentType/references/contactLink';
+import socialLink from './contentType/references/socialLink';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -40,6 +45,10 @@ export default createSchema({
     simpleMedia,
     awards,
     awardsSection,
+    storyFooter,
+    address,
+    contactLink,
+    socialLink,
     blockContent,
   ]),
 });

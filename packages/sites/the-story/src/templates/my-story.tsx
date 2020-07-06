@@ -14,7 +14,6 @@ const MyStory = ({ pageContext }: IndexProps) => {
   return (
     <Fragment>
       <ContentBlock blocks={pageData} />
-      <StoryFooter />
     </Fragment>
   );
 };

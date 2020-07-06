@@ -8,7 +8,7 @@ export default {
   space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
     body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      '"Sofia Pro", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },

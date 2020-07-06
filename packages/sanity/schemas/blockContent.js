@@ -74,5 +74,8 @@ export default {
     {
       type: 'awardsSection',
     },
+    {
+      type: 'storyFooter',
+    },
   ],
 };

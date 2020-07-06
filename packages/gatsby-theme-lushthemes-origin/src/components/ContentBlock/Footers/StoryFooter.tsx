@@ -11,24 +11,63 @@ import {
   Mail,
 } from '../../../assets/icons';
 
-interface StoryFooterProps {}
+type TAddress = {
+  address1?: string;
+  address2?: string;
+  address3?: string;
+  city?: string;
+  district?: string;
+  postcode?: string;
+};
 
-const socialLinks = [
-  { name: 'facebook', href: 'https:www.google.com' },
-  { name: 'instagram', href: 'https:www.google.com' },
-  { name: 'dribble', href: 'https:www.google.com' },
-  { name: 'behance', href: 'https:www.google.com' },
-];
+type TContact = {
+  email?: string;
+  phone?: string;
+};
+
+type TSocialLinks = {
+  name: string;
+  href: string;
+};
+
+interface StoryFooterProps {
+  address?: TAddress;
+  addressTitle?: string;
+  contact?: TContact;
+  contactTitle?: string;
+  socialLinks?: TSocialLinks[];
+  subtitle?: string;
+  title?: string;
+}
 
 const iconMapper = {
   behance: <Behance height={48} width={48} />,
-  dribble: <Dribbble height={48} width={48} />,
+  dribbble: <Dribbble height={48} width={48} />,
   facebook: <Facebook height={48} width={48} />,
   instagram: <Instagram height={48} width={48} />,
   mail: <Mail />,
 };
 
-const StoryFooter = ({}: StoryFooterProps) => {
+const StoryFooter = ({
+  address,
+  addressTitle,
+  contact,
+  contactTitle,
+  socialLinks,
+  subtitle,
+  title,
+}: StoryFooterProps) => {
+  const {
+    city = null,
+    district = null,
+    address1 = null,
+    address2 = null,
+    address3 = null,
+    postcode = null,
+  } = address;
+
+  const { email = null, phone = null } = contact;
+
   return (
     <Row
       direction={['column', 'column', 'row']}
@@ -40,14 +79,13 @@ const StoryFooter = ({}: StoryFooterProps) => {
           element='h2'
           sx={{ mb: 6, textAlign: ['center', 'center', 'left'] }}
           variant='h2'>
-          Got an idea?
+          {title}
         </Typography>
         <Typography
           element='h4'
           sx={{ mb: [8, 8, 10], textAlign: ['center', 'center', 'left'] }}
           variant='h4'>
-          I love to collab with curious and smart. Let’s do great things
-          together!
+          {subtitle}
         </Typography>
         <Row
           align={'center'}
@@ -86,21 +124,21 @@ const StoryFooter = ({}: StoryFooterProps) => {
               element='h5'
               sx={{ fontWeight: 'heading' }}
               variant='p'>
-              Contact me.
+              {contactTitle}
             </Typography>
             <Typography
               align='center'
               element='h5'
               sx={{ color: 'grey' }}
               variant='p'>
-              ollie@origin.com
+              {email}
             </Typography>
             <Typography
               align='center'
               element='h5'
               sx={{ color: 'grey' }}
               variant='p'>
-              +41 9912 882 345
+              {phone}
             </Typography>
           </Row>
           <Row
@@ -113,36 +151,62 @@ const StoryFooter = ({}: StoryFooterProps) => {
               element='h5'
               sx={{ fontWeight: 'heading' }}
               variant='p'>
-              Visit me.
+              {addressTitle}
             </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
-              Flat 22, 31 Origin Heights
-            </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
-              Origin Road
-            </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
-              London
-            </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
-              N1 1OR
-            </Typography>
+            {address1 && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {address1}
+              </Typography>
+            )}
+            {address2 && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {address2}
+              </Typography>
+            )}
+            {address3 && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {address3}
+              </Typography>
+            )}
+            {city && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {city}
+              </Typography>
+            )}
+            {district && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {district}
+              </Typography>
+            )}
+            {postcode && (
+              <Typography
+                align='center'
+                element='h5'
+                sx={{ color: 'grey' }}
+                variant='p'>
+                {postcode}
+              </Typography>
+            )}
           </Row>
         </Row>
 
