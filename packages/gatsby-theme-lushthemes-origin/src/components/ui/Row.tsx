@@ -59,6 +59,7 @@ const Row = ({
             alignItems: align,
             display: 'flex',
             flexDirection: direction,
+            justifyContent: justify,
             maxWidth: [584, 722, 1232],
             mx: 'auto',
             px: [2, 4, 5],

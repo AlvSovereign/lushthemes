@@ -7,7 +7,7 @@ const buttonBase = {
   cursor: 'pointer',
   px: 5,
   transition: 'background-color 0.1s, box-shadow 0.1s',
-  width: 'auto',
+  minWidth: 50,
   '&:hover': {
     boxShadow: 0,
   },
@@ -17,6 +17,20 @@ const buttonBase = {
 };
 
 const Button = {
+  plain: {
+    ...buttonBase,
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    borderWidth: 0,
+    padding: 0,
+    boxShadow: 'none',
+    '&:hover': {
+      boxShadow: 'none',
+    },
+    '&:active': {
+      boxShadow: 'none',
+    },
+  },
   primary: {
     ...buttonBase,
     backgroundColor: 'white',

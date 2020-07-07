@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 import Typography from './Typography';
 
-type IconPlacement = 'left' | 'right';
+type IconPlacement = 'center' | 'left' | 'right';
 type SvgIcon = ReactNode;
 type Icon = {
   asset: SvgIcon;
@@ -12,13 +12,20 @@ type Icon = {
 };
 
 interface ButtonProps {
+  className?: string;
   icon?: Icon;
   onClick: () => void;
-  value: string;
-  variant: 'primary' | 'secondary';
+  value?: string;
+  variant: 'plain' | 'primary' | 'secondary';
 }
 
-const Button = ({ icon = null, onClick, value, variant }: ButtonProps) => {
+const Button = ({
+  className,
+  icon = null,
+  onClick,
+  value,
+  variant,
+}: ButtonProps) => {
   const handleKeyPress = ({
     keyCode,
   }: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -28,19 +35,22 @@ const Button = ({ icon = null, onClick, value, variant }: ButtonProps) => {
   };
   return (
     <button
+      className={className}
       onClick={onClick}
       onKeyPress={handleKeyPress}
       sx={{ height: 50, variant: `Button.${variant}` }}>
-      <Typography
-        element='span'
-        sx={{
-          color: variant === 'primary' ? 'black' : 'white',
-          mr: icon ? 3 : 0,
-        }}
-        variant='span'>
-        {value.toUpperCase()}
-      </Typography>
-      {icon.asset}
+      {value && (
+        <Typography
+          element='span'
+          sx={{
+            color: variant === 'primary' ? 'black' : 'white',
+            mr: icon ? 3 : 0,
+          }}
+          variant='span'>
+          {value.toUpperCase()}
+        </Typography>
+      )}
+      {icon && icon.asset}
     </button>
   );
 };

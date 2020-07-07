@@ -2,19 +2,20 @@ const headingBase = {
   color: 'text',
   fontFamily: 'heading',
   fontWeight: 'heading',
-  m: 0,
+  my: 0,
 };
 
 const textBase = {
   color: 'text',
   fontFamily: 'body',
   fontWeight: 'body',
-  m: 0,
+  my: 0,
 };
 
 const Typography = {
   a: {
     ...textBase,
+    textDecoration: 'none',
   },
   figcaption: {
     ...textBase,

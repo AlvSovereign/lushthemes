@@ -1,4 +1,5 @@
 import Button from './button';
+import Header from './Header';
 import Shadows from './shadows';
 import Typography from './typography';
 
@@ -68,6 +69,7 @@ export default {
     },
   },
   Button,
+  Header,
   Typography,
   shadows: Shadows,
 };
