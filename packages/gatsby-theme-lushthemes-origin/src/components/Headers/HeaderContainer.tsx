@@ -3,18 +3,19 @@ import { jsx } from 'theme-ui';
 import { Children, cloneElement, Fragment, ReactNode, useState } from 'react';
 
 import { Row } from '../ui';
-import MenuModal from './MenuModal';
 
 interface HeaderContainerProps {
   children: ReactNode;
   className?: string;
   position: 'absolute' | 'fixed' | 'relative';
+  responsiveMenu?: ReactNode;
 }
 
 const HeaderContainer = ({
   children,
   className,
   position,
+  responsiveMenu,
 }: HeaderContainerProps) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
@@ -34,7 +35,7 @@ const HeaderContainer = ({
           cloneElement(child, { setShowMenu, showMenu })
         )}
       </Row>
-      {showMenu && <MenuModal />}
+      {showMenu && responsiveMenu}
     </Fragment>
   );
 };
