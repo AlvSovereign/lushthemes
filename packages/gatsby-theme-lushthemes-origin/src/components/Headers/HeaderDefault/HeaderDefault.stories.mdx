@@ -1,0 +1,36 @@
+import HeaderDefault from './HeaderDefault';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = [
+  {
+    _id: 'a3fcfde8-4e16-446b-9949-b6a976bd1f14',
+    slug: '/',
+    title: 'Home',
+  },
+  {
+    _id: '7c64f5b6-ea27-481d-bb9c-68188014e385',
+    slug: '/my-story',
+    title: 'My Story',
+  },
+];
+
+<Meta
+  title='Blocks / Header / HeaderDefault'
+  component={HeaderDefault}
+  decorators={[withThemeProvider]}
+/>
+
+# HeaderDefault
+
+THe meat of the Header. This component contains the logo, nav links and any other CTAs you'd want to add.
+
+IMPORTANT: It receives 2 props from the parent component by way of 'child cloning', they are:
+- showMenu: a boolean that controls the displa of the modal menu
+- setShowMenu: a React.SetStateAction function that toggles the showMenu function.
+`showMenu` and `setShowMenu` are React state hooks. You can use this to toggle and menu added to the `<HeaderContainer />` component from this `<HeaderDefault />` component.
+
+<Preview>
+  <Story name='Default'>
+    <HeaderDefault navData={exampleData} />
+  </Story>
+</Preview>

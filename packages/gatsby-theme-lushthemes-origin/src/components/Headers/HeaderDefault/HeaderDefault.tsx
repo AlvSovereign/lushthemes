@@ -7,12 +7,14 @@ import { Menu } from '../../../assets/icons';
 
 interface HeaderDefaultProps {
   className?: string;
+  navData: any[];
   setShowMenu: (showMenu: boolean) => void; // comes from the parent
   showMenu: boolean; // comes from the parent
 }
 
 const HeaderDefault = ({
   className,
+  navData,
   setShowMenu,
   showMenu,
 }: HeaderDefaultProps) => {
@@ -42,21 +44,19 @@ const HeaderDefault = ({
         element='div'
         justify='space-around'
         sx={{ display: ['none', 'none', 'flex'] }}>
-        {['page one', 'page two', 'page three', 'page four'].map(
-          (page, index, arr) => (
-            <Typography
-              element='a'
-              href='/'
-              key={index}
-              sx={{
-                mr: index + 1 === arr.length ? 0 : 3,
-                variant: 'Typography.a',
-              }}
-              variant='span'>
-              {page.toUpperCase()}
-            </Typography>
-          )
-        )}
+        {navData.map(({ _id, slug, title }, index, arr) => (
+          <Typography
+            element='a'
+            href={slug}
+            key={_id}
+            sx={{
+              mr: index + 1 === arr.length ? 0 : 3,
+              variant: 'styles.navLinks',
+            }}
+            variant='span'>
+            {title.toUpperCase()}
+          </Typography>
+        ))}
       </Row>
       <Button
         sx={{ display: ['none', 'none', 'block'] }}

@@ -1,0 +1,38 @@
+import HeaderContainer from './HeaderContainer';
+import MenuModal from '../MenuModal/MenuModal.tsx'
+import HeaderDefault from '../HeaderDefault/HeaderDefault.tsx'
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = [
+  {
+    _id: 'a3fcfde8-4e16-446b-9949-b6a976bd1f14',
+    slug: '/',
+    title: 'Home',
+  },
+  {
+    _id: '7c64f5b6-ea27-481d-bb9c-68188014e385',
+    slug: '/my-story',
+    title: 'My Story',
+  },
+];
+
+<Meta
+  title='Blocks / Header / HeaderContainer'
+  component={HeaderContainer}
+  decorators={[withThemeProvider]}
+/>
+
+# HeaderContainer
+
+The wrapper of the container controlling how the container behaves when the user scrolls. It also takes a `ResponsiveMenu` which is a menu to display for mobile & tablet screen sizes. It also clones the children of this compoent to add 2 props (a React state hook) that is responsible for toggling the `responsiveMenu`.
+
+<Preview>
+  <Story name='Default'>
+    <HeaderContainer
+      position='relative'
+      responsiveMenu={<MenuModal navData={exampleData} />}
+      sx={{ height: '60px' }}>
+      <HeaderDefault navData={exampleData} />
+    </HeaderContainer>
+  </Story>
+</Preview>

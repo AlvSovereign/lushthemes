@@ -1,10 +1,14 @@
 import Button from './button';
-import Header from './Header';
+import Header from './header';
 import Shadows from './shadows';
 import Typography from './typography';
 
 export default {
   useBorderBox: true,
+  Button,
+  Header,
+  Typography,
+  shadows: Shadows,
   breakpoints: ['600px', '768px', '1280px'],
   space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
@@ -67,9 +71,10 @@ export default {
     img: {
       maxWidth: '100%',
     },
+    navLinks: {
+      ...Typography.a,
+      fontSize: '14px',
+      letterSpacing: '0.3px',
+    },
   },
-  Button,
-  Header,
-  Typography,
-  shadows: Shadows,
 };

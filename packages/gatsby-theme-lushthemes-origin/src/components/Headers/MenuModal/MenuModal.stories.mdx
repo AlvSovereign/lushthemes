@@ -1,0 +1,31 @@
+import MenuModal from './MenuModal';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { withThemeProvider } from 'storybook-addon-theme-ui';
+const exampleData = [
+  {
+    _id: 'a3fcfde8-4e16-446b-9949-b6a976bd1f14',
+    slug: '/',
+    title: 'Home',
+  },
+  {
+    _id: '7c64f5b6-ea27-481d-bb9c-68188014e385',
+    slug: '/my-story',
+    title: 'My Story',
+  },
+];
+
+<Meta
+  title='Blocks / Header / MenuModal'
+  component={MenuModal}
+  decorators={[withThemeProvider]}
+/>
+
+# MenuModal
+
+A simple full screen modal that is used when the menu is pressed. Generally reserved for mobile and tablet devices for easier navigation, but you can use this however you want.
+
+<Preview>
+  <Story name='Default'>
+    <MenuModal navData={exampleData} />
+  </Story>
+</Preview>

@@ -16,17 +16,17 @@ const exampleData = {
   decorators={[withThemeProvider]}
 />
 
-# WorkExperience
+# SimpleMedia
 
 With `MDX` we can define a story for `WorkExperience` right in the middle of our
 markdown documentation.
 
 <Preview>
   <Story name='Default'>
-      <SimpleMedia caption={exampleData.caption}>
-        <video controls={true} style={{ width: '100%' }}>
-          <source src={exampleData.media.asset.url} type='video/mp4' />
-        </video>
-      </SimpleMedia>
+    <SimpleMedia caption={exampleData.caption}>
+      <video controls={true} style={{ width: '100%' }}>
+        <source src={exampleData.media.asset.url} type='video/mp4' />
+      </video>
+    </SimpleMedia>
   </Story>
 </Preview>

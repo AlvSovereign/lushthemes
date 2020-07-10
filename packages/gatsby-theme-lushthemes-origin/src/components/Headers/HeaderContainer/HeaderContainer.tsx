@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui';
 import { Children, cloneElement, Fragment, ReactNode, useState } from 'react';
 
-import { Row } from '../ui';
+import { Row } from '../../ui';
 
 interface HeaderContainerProps {
   children: ReactNode;

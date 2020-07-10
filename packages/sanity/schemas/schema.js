@@ -9,8 +9,8 @@ import blockContent from './blockContent';
 import category from './category';
 import post from './post';
 import author from './author';
-
 import page from './page';
+import navigation from './navigation';
 import myStoryHero from './contentType/blocks/content/my-story-hero';
 import simpleMedia from './contentType/mediaBlock/simpleMedia';
 import workExperienceSection from './contentType/blocks/content/work-experience';
@@ -36,6 +36,7 @@ export default createSchema({
     author,
     category,
     page,
+    navigation,
     // The following are block content components
     workExperienceSection,
     myStoryHero,
