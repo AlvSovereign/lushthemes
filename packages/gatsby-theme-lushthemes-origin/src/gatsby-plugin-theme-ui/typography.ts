@@ -35,7 +35,6 @@ const Typography = {
     fontSize: [5, 6, 7],
     letterSpacing: '-2px',
     lineHeight: 'heading',
-    mb: 5,
   },
   h2: {
     ...headingBase,

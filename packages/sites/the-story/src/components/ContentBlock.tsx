@@ -60,7 +60,7 @@ const serializers = {
       return <Awards listTitle={listTitle} list={awardsList} title={title} />;
     },
     myStoryHero: ({ node }) => {
-      const { content, image } = node;
+      const { content, cta, image, subtitle, title } = node;
       const fluidImage = getFluidGatsbyImage(
         image.asset.id,
         { maxWidth: 800 },
@@ -68,9 +68,14 @@ const serializers = {
       );
 
       return (
-        <MyStoryHero fluidImage={fluidImage}>
-          <BlockContent blocks={content} serializers={serializers} />
-        </MyStoryHero>
+        <MyStoryHero
+          content={content}
+          cta={cta}
+          fluidImage={fluidImage}
+          onCtaClick={() => {}}
+          subtitle={subtitle}
+          title={title}
+        />
       );
     },
     simpleMedia: ({ node }) => {

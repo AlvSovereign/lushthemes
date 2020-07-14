@@ -14,6 +14,13 @@ const fluidImage = {
     'https://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=200&h=300&fit=crop&fm=webp 200w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=400&h=600&fit=crop&fm=webp 400w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=800&h=1199&fit=crop&fm=webp 800w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=1200&h=1799&fit=crop&fm=webp 1200w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=1600&h=2399&fit=crop&fm=webp 1600w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?w=2400&h=3598&fit=crop&fm=webp 2400w,\nhttps://cdn.sanity.io/images/7805c5hv/production/cbe931c599b31953f4fa35f05b86d5fbdb1ee7b2-5304x7952.jpg?fm=webp 5304w',
   sizes: '(max-width: 800px) 100vw, 800px',
 };
+const data = {
+  content:
+    'Mac is a graphic designer from Bohn who currently resides in cold Hamburg, Germany. In 2008, he graduated with a Graphic Design from Fake Berlin College. That may seem like centuries ago in internet years, but don’t worry, this hyperbolic old dog is on top of all the new tricks. Olly enjoys houseplants and has a deep (fried) love for chicken. He is currently available for freelance projects.',
+  cta: "Let's work together",
+  subtitle: 'and I am a React specialist.',
+  title: "I'm Mac Solomon 👋",
+};
 
 <Meta
   title='Blocks / Hero / MyStoryHero'
@@ -28,19 +35,13 @@ markdown documentation.
 
 <Preview>
   <Story name='Default'>
-    <MyStoryHero fluidImage={fluidImage}>
-      <Typography element='h1' variant='hero'>{`Hello 👋`}</Typography>
-      <Typography element='h2' variant='h2'>
-        I'm a React Specialist
-      </Typography>
-      <Typography element='p' variant='p'>
-        Olly is a graphic designer from Bohn who currently resides in cold
-        Hamburg, Germany. In 2008, he graduated with in Graphic Design from Fake
-        Berlin College. That may seem like centuries ago in internet years, but
-        don’t worry, this hyperbolic old dog is on top of all the new tricks.
-        Olly enjoys houseplants and has a deep (fried) love for chicken. He is
-        currently available for freelance projects.
-      </Typography>
-    </MyStoryHero>
+    <MyStoryHero
+      content={data.content}
+      cta={data.cta}
+      fluidImage={fluidImage}
+      onCtaClick={() => {}}
+      subtitle={data.subtitle}
+      title={data.title}
+    />
   </Story>
 </Preview>

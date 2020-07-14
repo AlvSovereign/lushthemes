@@ -15,12 +15,14 @@ interface ButtonProps {
   className?: string;
   icon?: Icon;
   onClick: () => void;
+  textColor?: 'black' | 'white';
   value?: string;
   variant: 'plain' | 'primary' | 'secondary';
 }
 
 const Button = ({
   className,
+  textColor,
   icon = null,
   onClick,
   value,
@@ -43,7 +45,7 @@ const Button = ({
         <Typography
           element='span'
           sx={{
-            color: variant === 'primary' ? 'black' : 'white',
+            color: textColor || variant === 'primary' ? 'black' : 'white',
             mr: icon ? 3 : 0,
           }}
           variant='span'>
