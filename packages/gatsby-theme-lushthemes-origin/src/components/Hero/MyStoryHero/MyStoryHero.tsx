@@ -34,17 +34,29 @@ const MyStoryHero = ({
       element='section'
       sx={{ backgroundColor: 'silver', py: [100, 100, 120] }}
       withContainer={true}>
-      <div sx={{ flex: 1.5, pr: [null, null, 9], pb: [5, 5, null] }}>
+      <div
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          flex: 1.5,
+          pr: [null, null, 9],
+          pb: [8, 9, null],
+        }}>
         <Typography element='h1' variant='h1'>
           {title}
         </Typography>
         <Typography element='h3' sx={{ mb: 3 }} variant='h3'>
           {subtitle}
         </Typography>
-        <Typography element='p' sx={{ mb: 5 }} variant='p'>
+        <Typography element='p' sx={{ mb: 7 }} variant='p'>
           {content}
         </Typography>
-        <Button onClick={onCtaClick} variant='secondary' value={cta} />
+        <Button
+          onClick={onCtaClick}
+          sx={{ alignSelf: 'center' }}
+          variant='secondary'
+          value={cta}
+        />
       </div>
       <div sx={{ flex: 1, boxShadow: 2 }}>
         <Img fluid={fluidImage} />

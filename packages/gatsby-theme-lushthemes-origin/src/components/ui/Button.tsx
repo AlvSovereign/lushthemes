@@ -46,6 +46,7 @@ const Button = ({
           element='span'
           sx={{
             color: textColor || variant === 'primary' ? 'black' : 'white',
+            fontSize: '0.875rem',
             mr: icon ? 3 : 0,
           }}
           variant='span'>

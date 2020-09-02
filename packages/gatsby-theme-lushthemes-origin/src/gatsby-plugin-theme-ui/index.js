@@ -41,9 +41,6 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
-    a: {
-      color: 'primary',
-    },
     pre: {
       fontFamily: 'monospace',
       overflowX: 'auto',
@@ -75,6 +72,10 @@ export default {
       ...Typography.a,
       fontSize: '14px',
       letterSpacing: '0.3px',
+    },
+    mobileNavLinks: {
+      ...Typography.a,
+      fontSize: 4,
     },
   },
 };

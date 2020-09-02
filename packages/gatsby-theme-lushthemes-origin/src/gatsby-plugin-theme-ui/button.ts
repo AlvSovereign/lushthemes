@@ -1,12 +1,15 @@
 const buttonBase = {
+  alignItems: 'center',
   borderColor: 'black',
   borderRadius: 0,
   borderStyle: 'solid',
   borderWidth: '1px',
   boxShadow: 1,
   cursor: 'pointer',
-  px: 5,
-  transition: 'background-color 0.1s, box-shadow 0.1s',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  letterSpacing: '1px',
   minWidth: 50,
   '&:hover': {
     boxShadow: 0,
@@ -14,6 +17,8 @@ const buttonBase = {
   '&:active': {
     boxShadow: 'none',
   },
+  px: 5,
+  transition: 'background-color 0.1s, box-shadow 0.1s',
 };
 
 const Button = {

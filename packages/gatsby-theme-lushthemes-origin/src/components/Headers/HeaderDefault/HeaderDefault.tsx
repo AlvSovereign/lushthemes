@@ -34,7 +34,7 @@ const HeaderDefault = ({
       <Typography
         element='a'
         href='/'
-        sx={{ lineHeight: '1', textDecoration: 'none' }}
+        sx={{ pl: [4, 4, 0], lineHeight: '1', textDecoration: 'none' }}
         variant='h4'>
         Origin.
       </Typography>
@@ -59,10 +59,10 @@ const HeaderDefault = ({
         ))}
       </Row>
       <Button
-        sx={{ display: ['none', 'none', 'block'] }}
+        sx={{ boxShadow: 'none', display: ['none', 'none', 'block'] }}
         onClick={() => console.log('clicked')}
         value='Contact Me'
-        variant='primary'
+        variant='secondary'
       />
       <Button
         icon={{

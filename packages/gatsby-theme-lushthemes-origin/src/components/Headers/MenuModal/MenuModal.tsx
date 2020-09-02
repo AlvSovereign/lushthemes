@@ -1,7 +1,8 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-
+import { animated, useSpring } from 'react-spring';
+import { Trail } from 'react-spring/renderprops';
 import { Row, Typography } from '../../ui';
 
 interface MenuModalProps {
@@ -9,36 +10,55 @@ interface MenuModalProps {
 }
 
 const MenuModal = ({ navData }: MenuModalProps) => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0.7 } });
+
   return (
-    <Row
-      align='center'
-      direction='column'
-      element='aside'
-      justify='center'
-      style={{
+    <animated.div
+      style={props}
+      sx={{
+        alignItems: 'center',
         backgroundColor: 'white',
         bottom: 0,
+        display: 'flex',
         height: `calc(100vh - 60px)`,
+        justifyContent: 'center',
         left: 0,
         position: 'fixed',
         right: 0,
         top: 60,
-        zIndex: 99,
+        zIndex: 99999,
       }}>
-      {navData.map(({ _id, slug, title }, index, arr) => (
-        <Typography
-          element='a'
-          href={slug}
-          key={_id}
-          sx={{
-            mr: index + 1 === arr.length ? 0 : 3,
-            variant: 'styles.navLinks',
-          }}
-          variant='span'>
-          {title.toUpperCase()}
-        </Typography>
-      ))}
-    </Row>
+      <Row
+        align='end'
+        direction='column'
+        element='ul'
+        justify='center'
+        sx={{
+          m: 0,
+          p: 0,
+          pr: 5,
+          width: '100%',
+        }}>
+        <Trail
+          delay={300}
+          from={{ opacity: 0 }}
+          keys={(item) => item.slug}
+          to={{ opacity: 1 }}
+          items={navData}>
+          {(item) => (props) => (
+            <animated.li style={props} sx={{ listStyle: 'none', mb: 2 }}>
+              <Typography
+                element='a'
+                href={item.slug}
+                variant='h4'
+                sx={{ variant: 'styles.mobileNavLinks' }}>
+                {item.title}
+              </Typography>
+            </animated.li>
+          )}
+        </Trail>
+      </Row>
+    </animated.div>
   );
 };
 
