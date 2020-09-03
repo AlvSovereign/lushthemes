@@ -1,39 +1,20 @@
 export default {
-  name: 'page',
-  title: 'Page',
+  name: 'siteMetadata',
+  title: 'Site metadata',
   type: 'document',
   fields: [
-    {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'string',
-      required: true,
-      min: 70,
-      max: 155,
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
-    },
     {
       name: 'seoTitle',
       title: 'SEO title',
       type: 'string',
+    },
+    {
+      name: 'seoDescription',
+      title: 'SEO description',
+      type: 'string',
+      required: true,
+      min: 70,
+      max: 155,
     },
     {
       name: 'seoImage',

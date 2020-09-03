@@ -8,8 +8,6 @@ import { Menu } from '../../../assets/icons';
 interface HeaderDefaultProps {
   className?: string;
   navData: any[];
-  setShowMenu: (showMenu: boolean) => void; // comes from the parent
-  showMenu: boolean; // comes from the parent
   [key: string]: any;
 }
 

@@ -5,12 +5,13 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // We import object and document schemas
+import author from './author';
 import blockContent from './blockContent';
 import category from './category';
 import post from './post';
-import author from './author';
-import page from './page';
 import navigation from './navigation';
+import page from './page';
+import siteMetadata from './site-metadata';
 import myStoryHero from './contentType/blocks/content/my-story-hero';
 import simpleMedia from './contentType/mediaBlock/simpleMedia';
 import workExperienceSection from './contentType/blocks/content/work-experience';
@@ -37,6 +38,7 @@ export default createSchema({
     category,
     page,
     navigation,
+    siteMetadata,
     // The following are block content components
     workExperienceSection,
     myStoryHero,

@@ -34,16 +34,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 const createPages = (pageData, createPage) => {
   pageData.forEach((edge) => {
     const path = `${edge.node.slug.current}`;
-    const homePage = path === '/';
 
     createPage({
-      path,
-      component: require.resolve(
-        `./src/templates/${homePage ? 'index' : path}.tsx`
-      ),
+      component: require.resolve('./src/templates/default.tsx'),
       context: {
         data: edge.node,
       },
+      path,
     });
   });
 };
