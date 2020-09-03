@@ -41,11 +41,11 @@ const MyStory = ({ pageContext }: IndexProps) => {
   return (
     <Fragment>
       <HeaderContainer
-        position='relative'
+        header={<HeaderDefault navData={navData} />}
+        position='fixed'
         responsiveMenu={<MenuModal navData={navData} />}
-        sx={{ height: '60px' }}>
-        <HeaderDefault navData={navData} />
-      </HeaderContainer>
+        sx={{ height: '60px' }}
+      />
       <ContentBlock blocks={pageData} />
     </Fragment>
   );

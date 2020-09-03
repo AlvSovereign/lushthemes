@@ -10,6 +10,7 @@ interface HeaderDefaultProps {
   navData: any[];
   setShowMenu: (showMenu: boolean) => void; // comes from the parent
   showMenu: boolean; // comes from the parent
+  [key: string]: any;
 }
 
 const HeaderDefault = ({

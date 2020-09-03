@@ -1,23 +1,41 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
-import { Children, cloneElement, Fragment, ReactNode, useState } from 'react';
+import {
+  Children,
+  cloneElement,
+  Fragment,
+  ReactNode,
+  useState,
+  ReactElement,
+  useEffect,
+} from 'react';
+import { useTransition } from 'react-spring';
 
 import { Row } from '../../ui';
 
 interface HeaderContainerProps {
-  children: ReactNode;
   className?: string;
-  position: 'absolute' | 'fixed' | 'relative';
-  responsiveMenu?: ReactNode;
+  header: ReactElement;
+  position: 'fixed' | 'relative';
+  responsiveMenu?: ReactElement;
 }
 
 const HeaderContainer = ({
-  children,
   className,
+  header,
   position,
   responsiveMenu,
 }: HeaderContainerProps) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const transitions = useTransition(showMenu, null, {
+    enter: { opacity: 1 },
+    from: { opacity: 0.7 },
+    leave: { opacity: 0 },
+  });
+
+  useEffect(() => {
+    console.log('rendered ', showMenu);
+  });
 
   // block body scrolling;
   document.body.style.overflow = showMenu ? 'hidden' : 'visible';
@@ -31,11 +49,12 @@ const HeaderContainer = ({
         element='header'
         justify='center'
         sx={{ variant: `Header.${position}` }}>
-        {Children.map(children, (child: any) =>
-          cloneElement(child, { setShowMenu, showMenu })
-        )}
+        {cloneElement(header, { setShowMenu, showMenu })}
       </Row>
-      {showMenu && responsiveMenu}
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && cloneElement(responsiveMenu, { key, props })
+      )}
     </Fragment>
   );
 };
