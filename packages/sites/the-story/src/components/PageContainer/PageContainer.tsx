@@ -1,7 +1,5 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
 import React from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export type SiteMetadata = {
   openGraphDescription?: string;
@@ -43,18 +41,20 @@ const SEO = ({ metadata }: SEOProps) => {
       <meta name='title' content={seoTitle} />
       <meta name='description' content={seoDescription} />
       {seoImage && <meta name='image' content={seoImage.asset.url} />}
+      {openGraphLocale && (
+        <meta property='og:locale' content={openGraphLocale} />
+      )}
       {openGraphUrl && <meta property='og:url' content={openGraphUrl} />}
       {openGraphType === 'article' && (
         <meta property='og:type' content='article' />
       )}
       {seoTitle && <meta property='og:title' content={openGraphTitle} />}
-      {openGraphDescription ||
-        (seoDescription && (
-          <meta
-            property='og:description'
-            content={openGraphDescription || seoDescription}
-          />
-        ))}
+      {(openGraphDescription || seoDescription) && (
+        <meta
+          property='og:description'
+          content={openGraphDescription || seoDescription}
+        />
+      )}
       {openGraphImage && (
         <meta property='og:image' content={openGraphImage.asset.url} />
       )}
@@ -63,13 +63,12 @@ const SEO = ({ metadata }: SEOProps) => {
         <meta name='twitter:creator' content={twitterUsername} />
       )}
       {seoTitle && <meta name='twitter:title' content={seoTitle} />}
-      {twitterDescription ||
-        (seoDescription && (
-          <meta
-            name='twitter:description'
-            content={twitterDescription || seoDescription}
-          />
-        ))}
+      {(twitterDescription || seoDescription) && (
+        <meta
+          name='twitter:description'
+          content={twitterDescription || seoDescription}
+        />
+      )}
       {twitterImage && <meta name='twitter:image' content={twitterImage} />}
     </Helmet>
   );
