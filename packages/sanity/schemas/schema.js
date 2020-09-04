@@ -12,7 +12,8 @@ import post from './post';
 import navigation from './navigation';
 import page from './page';
 import siteMetadata from './site-metadata';
-import myStoryHero from './contentType/blocks/content/my-story-hero';
+import homeHero from './contentType/blocks/content/hero/home';
+import myStoryHero from './contentType/blocks/content/hero/my-story';
 import simpleMedia from './contentType/mediaBlock/simpleMedia';
 import workExperienceSection from './contentType/blocks/content/work-experience';
 import workExperience from './contentType/references/work-experience';
@@ -41,6 +42,7 @@ export default createSchema({
     siteMetadata,
     // The following are block content components
     workExperienceSection,
+    homeHero,
     myStoryHero,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

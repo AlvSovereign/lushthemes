@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
-import { Row } from '../ui';
+import { Row, Typography } from '../ui';
 
 interface SimpleMediaProps {
   caption?: string;
@@ -15,7 +15,7 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => {
       display='block'
       direction='column'
       element='section'
-      sx={{ py: [100, 100, 120] }}
+      sx={{ background: 'silver', py: [100, 100, 120] }}
       withContainer={true}>
       <Row
         align='center'
@@ -31,13 +31,14 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => {
             element='figcaption'
             justify='center'
             sx={{
-              textAlign: 'center',
               bg: 'transparent',
               py: 6,
               variant: 'Typography.figcaption',
               width: '100%',
             }}>
-            {caption}
+            <Typography color='white' element='p' variant='p'>
+              {caption}
+            </Typography>
           </Row>
         )}
       </Row>

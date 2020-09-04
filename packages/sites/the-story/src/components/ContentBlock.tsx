@@ -10,6 +10,7 @@ import Img from 'gatsby-image';
 import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
 import {
   Awards,
+  HomeHero,
   MyStoryHero,
   SimpleMedia,
   StoryFooter,
@@ -58,6 +59,17 @@ const serializers = {
       const { awardsList, listTitle, title } = node;
 
       return <Awards listTitle={listTitle} list={awardsList} title={title} />;
+    },
+    homeHero: ({ node }) => {
+      const fluidImage = getFluidGatsbyImage(
+        node.image.asset.id,
+        { maxWidth: 800 },
+        config
+      );
+
+      return (
+        <HomeHero {...node} fluidImage={fluidImage} onCtaClick={() => {}} />
+      );
     },
     myStoryHero: ({ node }) => {
       const { content, cta, image, subtitle, title } = node;

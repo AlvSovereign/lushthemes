@@ -41,6 +41,18 @@ export default {
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
+            title: 'Button',
+            name: 'button',
+            type: 'object',
+            fields: [
+              {
+                title: 'Text',
+                name: 'buttonText',
+                type: 'string',
+              },
+            ],
+          },
+          {
             title: 'URL',
             name: 'link',
             type: 'object',
@@ -61,6 +73,9 @@ export default {
     {
       type: 'image',
       options: { hotspot: true },
+    },
+    {
+      type: 'homeHero',
     },
     {
       type: 'myStoryHero',
