@@ -59,8 +59,8 @@ const HeaderDefault = ({
       </Row>
       <Button
         sx={{ boxShadow: 'none', display: ['none', 'none', 'block'] }}
+        label='Contact Me'
         onClick={() => console.log('clicked')}
-        value='Contact Me'
         variant='secondary'
       />
       <Button

@@ -22,7 +22,6 @@ const HomeHero = ({
   text,
   title,
 }: HomeHeroProps) => {
-  console.log('fluidImage: ', fluidImage);
   return (
     <Row
       align='center'
@@ -36,20 +35,25 @@ const HomeHero = ({
       }}
       withContainer={true}>
       <Row direction='column' element='div' sx={{ flex: [1, 1, 0.5] }}>
-        <Typography element='h1' sx={{ color: 'white', mb: 5 }} variant='h1'>
+        <Typography color='white' element='h1' sx={{ mb: 5 }} variant='h1'>
           {title}
         </Typography>
-        <Typography element='p' sx={{ color: 'silver', mb: 5 }} variant='p'>
+        <Typography
+          color='white'
+          element='p'
+          sx={{ mb: 5 }}
+          variant='p'
+          weight='light'>
           {text}
         </Typography>
-        <Typography element='h4' sx={{ color: 'white', mb: 6 }} variant='h4'>
+        <Typography color='white' element='h4' sx={{ mb: 6 }} variant='h4'>
           {endText}
         </Typography>
         <Button
+          label={cta}
           onClick={onCtaClick}
           sx={{ alignSelf: 'center' }}
           variant='primary'
-          value={cta}
         />
       </Row>
     </Row>

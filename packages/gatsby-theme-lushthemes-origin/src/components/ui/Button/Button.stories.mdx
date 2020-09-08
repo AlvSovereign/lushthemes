@@ -1,0 +1,54 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Button, { ButtonProps } from './Button';
+
+<Meta title='Components/Button' component={Button} />
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+Our Button component consisting of 3 types: `plain`, `primary` and `secondary`.
+
+Plain button:
+
+<Canvas>
+  <Story
+    name='plain'
+    args={{
+      label: 'Plain button',
+      onClick: () => alert('clicked'),
+      variant: 'plain',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Primary button with custom class:
+
+<Canvas>
+  <Story
+    name='primary'
+    args={{
+      label: 'Primary button',
+      onClick: () => alert('clicked'),
+      variant: 'primary',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+Secondary button:
+
+<Canvas>
+  <Story
+    name='secondary'
+    args={{
+      label: 'Secondary button',
+      onClick: () => alert('clicked'),
+      variant: 'secondary',
+    }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story='plain' />

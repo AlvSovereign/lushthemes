@@ -87,14 +87,14 @@ const WorkExperience = ({
             {d.role}
           </Typography>
           <hr sx={{ border: '1px solid silver' }} />
-          <a href={d.url} target='_blank' sx={{ variant: 'Typography.a' }}>
-            <Typography
-              element='span'
-              sx={{ color: 'grey', fontWeight: 'heading', mr: 2 }}
-              variant='small'>
-              {d.link}
-            </Typography>
-          </a>
+          <Typography
+            element='a'
+            href={d.url}
+            sx={{ color: 'grey', fontWeight: 'heading', mr: 2 }}
+            target='_blank'
+            variant='small'>
+            {d.link}
+          </Typography>
         </div>
       ))}
     </Row>

@@ -1,13 +1,14 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import ContentBlock from '../components/ContentBlock';
 import HeaderContainer from 'gatsby-theme-lushthemes-origin/src/components/Headers/HeaderContainer/HeaderContainer';
 import HeaderDefault from 'gatsby-theme-lushthemes-origin/src/components/Headers/HeaderDefault/HeaderDefault';
 import MenuModal from 'gatsby-theme-lushthemes-origin/src/components/Headers/MenuModal/MenuModal';
-import SEO from '../components/PageContainer/PageContainer';
+import SEO from '../components/Seo/Seo';
+import { Layout } from 'gatsby-theme-lushthemes-origin';
 
 export interface PageData {
   id: string;
@@ -71,16 +72,15 @@ const Default = ({ pageContext }: DefaultProps) => {
   }));
 
   return (
-    <Fragment>
+    <Layout>
       <SEO metadata={siteMetadata} />
       <HeaderContainer
         header={<HeaderDefault navData={navData} />}
         position='fixed'
         responsiveMenu={<MenuModal navData={navData} />}
-        sx={{ height: '60px' }}
       />
       <ContentBlock blocks={pageData} />
-    </Fragment>
+    </Layout>
   );
 };
 

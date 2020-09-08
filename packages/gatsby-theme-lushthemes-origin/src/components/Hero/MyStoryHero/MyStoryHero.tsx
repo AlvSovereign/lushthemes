@@ -52,10 +52,10 @@ const MyStoryHero = ({
           {content}
         </Typography>
         <Button
+          label={cta}
           onClick={onCtaClick}
           sx={{ alignSelf: 'center' }}
           variant='secondary'
-          value={cta}
         />
       </div>
       <div sx={{ flex: 1, boxShadow: 2 }}>

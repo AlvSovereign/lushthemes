@@ -16,7 +16,7 @@ type Wrap = 'nowrap' | 'wrap';
 
 interface RowProps {
   align?: Alignment | Alignment[];
-  backgroundImage: FluidObject | FluidObject[];
+  backgroundImage?: FluidObject | FluidObject[];
   children: ReactNode;
   className?: string;
   containerClassName?: string;

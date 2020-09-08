@@ -48,7 +48,7 @@ const HeaderContainer = ({
         direction='row'
         element='header'
         justify='center'
-        sx={{ variant: `Header.${position}` }}>
+        sx={{ height: '60px', variant: `Header.${position}` }}>
         {cloneElement(header, { setShowMenu, showMenu })}
       </Row>
       {transitions.map(

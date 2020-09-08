@@ -1,0 +1,81 @@
+.button {
+  align-items: center;
+  border-color: black;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: var(--shadow-medium);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: center;
+  letter-spacing: 1px;
+  min-width: 50px;
+  padding: 0 var(--spacing-5);
+  transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+.button:active {
+  box-shadow: 'none';
+}
+
+.button:hover {
+  box-shadow: var(--shadow-small);
+}
+
+.buttonPlain {
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 0;
+  box-shadow: 'none';
+  padding: 0;
+}
+
+.buttonPlain:hover {
+  box-shadow: 'none';
+}
+
+.buttonPrimary {
+  background-color: var(--color-white);
+}
+
+.buttonPrimary:active {
+  background-color: var(--color-silver);
+  border-color: var(--color-silver);
+}
+
+.buttonSecondary {
+  background-color: var(--color-black);
+}
+
+.buttonSecondary:active {
+  background-color: var(--color-grey);
+  border-color: var(--color-grey);
+}
+
+.buttonSecondary:hover {
+  background-color: var(--color-olive);
+  border-color: var(--color-olive);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.labelPlain {
+  color: var(--color-white);
+}
+
+.labelPrimary {
+  color: var(--color-black);
+}
+
+.labelSecondary {
+  color: var(--color-white);
+}
+
+.labelWithIcon {
+  margin-right: var(--spacing-3);
+}

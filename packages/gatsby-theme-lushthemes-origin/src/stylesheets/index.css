@@ -1,0 +1,57 @@
+:root {
+  /* fonts */
+  --font-family: '"Sofia Pro", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
+  --font-family-mono: 'Menlo, monospace';
+
+  /* font sizes */
+  --font-size-0: 1rem;
+  --font-size-1: 1.25rem;
+  --font-size-2: 1.563rem;
+  --font-size-3: 1.953rem;
+  --font-size-4: 2.441rem;
+  --font-size-5: 3.052rem;
+  --font-size-6: 3.815rem;
+  --font-size-7: 4.768rem;
+
+  /* font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 500;
+  --font-weight-bold: 700;
+
+  /* colors */
+  --color-black: #000;
+  --color-grey: #7f7f7f;
+  --color-muted: #f6f6f6;
+  --color-olive: #3f3f3f;
+  --color-primary: #07c;
+  --color-secondary: #30c;
+  --color-silver: #c5c5c5;
+  --color-white: #fff;
+
+  /* shadows */
+  --shadow-small: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  --shadow-medium: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 6px 6px -3px rgba(0, 0, 0, 0.2),
+    0 10px 14px 1px rgba(0, 0, 0, 0.14), 0 4px 18px 3px rgba(0, 0, 0, 0.12);
+
+  /* spacing */
+  --spacing-0: 0;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 40px;
+  --spacing-8: 56px;
+  --spacing-9: 64px;
+}
+
+/**
+ * Base font size
+ */
+html {
+  font-size: 16px;
+}

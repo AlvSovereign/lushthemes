@@ -212,8 +212,8 @@ const StoryFooter = ({
 
         <Button
           icon={{ asset: <Mail fill='white' />, placement: 'right' }}
+          label='Send Email'
           onClick={() => console.log('clicked')}
-          value='Send Email'
           variant='secondary'
         />
       </Row>
