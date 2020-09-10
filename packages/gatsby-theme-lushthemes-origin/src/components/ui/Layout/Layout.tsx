@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import Row from '../Row';
+import { Row } from '..';
 import '../../../stylesheets/normalize.css';
 import '../../../stylesheets/index.css';
 
@@ -11,12 +11,10 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <Row direction='column' element='main'>
       {children}
     </Row>
   );
 };
-
-export default Layout;

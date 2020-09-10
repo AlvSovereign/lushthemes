@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import cx from 'classnames';
 
-import Typography from '../Typography/Typography';
+import { Typography } from '..';
 import styles from './Button.module.css';
 
 type IconPlacement = 'left' | 'right';
@@ -34,7 +34,7 @@ export interface ButtonProps {
   variant: 'plain' | 'primary' | 'secondary';
 }
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   className,
   icon = null,
   onClick,
@@ -78,5 +78,3 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   );
 };
-
-export default Button;

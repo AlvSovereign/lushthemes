@@ -1,6 +1,6 @@
 :root {
   /* fonts */
-  --font-family: '"Sofia Pro", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
+  --font-family: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
   --font-family-mono: 'Menlo, monospace';
 
   /* font sizes */

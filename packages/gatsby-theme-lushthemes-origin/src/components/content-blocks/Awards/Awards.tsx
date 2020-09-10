@@ -49,7 +49,7 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
                 key={index}
                 direction='row'
                 element='tr'
-                justify='space-between'
+                justify='between'
                 sx={{
                   color: 'white',
                   flex: 1,
@@ -68,4 +68,4 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
   );
 };
 
-export default Awards;
+export { Awards };

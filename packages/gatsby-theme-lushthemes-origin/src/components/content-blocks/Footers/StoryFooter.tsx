@@ -221,4 +221,4 @@ const StoryFooter = ({
   );
 };
 
-export default StoryFooter;
+export { StoryFooter };

@@ -1,7 +1,7 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import { ReactNode } from 'react';
-import { Row, Typography } from '../ui';
+import { Row, Typography } from '../../ui';
 
 interface SimpleMediaProps {
   caption?: string;
@@ -46,4 +46,4 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => {
   );
 };
 
-export default SimpleMedia;
+export { SimpleMedia };

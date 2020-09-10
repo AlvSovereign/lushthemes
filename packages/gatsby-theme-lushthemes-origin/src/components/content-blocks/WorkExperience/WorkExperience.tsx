@@ -101,4 +101,4 @@ const WorkExperience = ({
   </Row>
 );
 
-export default WorkExperience;
+export { WorkExperience };

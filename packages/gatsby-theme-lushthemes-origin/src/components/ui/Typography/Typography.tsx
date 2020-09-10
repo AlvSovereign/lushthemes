@@ -40,7 +40,7 @@ export interface TypographyProps {
   [key: string]: any;
 }
 
-const Typography = ({
+export const Typography = ({
   align,
   children,
   className,
@@ -69,5 +69,3 @@ const Typography = ({
     </Element>
   );
 };
-
-export default Typography;

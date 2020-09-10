@@ -64,4 +64,4 @@ const MenuModal = ({
   </animated.div>
 );
 
-export default MenuModal;
+export { MenuModal };

@@ -1,0 +1,87 @@
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: end;
+}
+
+.alignInherit {
+  align-items: inherit;
+}
+
+.alignStart {
+  align-items: flex-start;
+}
+
+.backgroundImage {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  max-width: 584px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-2);
+  width: 100%;
+  z-index: 9;
+}
+
+.directionColumn {
+  flex-direction: column;
+}
+
+.directionRow {
+  flex-direction: row;
+}
+
+.justifyAround {
+  justify-content: space-around;
+}
+
+.justifyBetween {
+  justify-content: space-between;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyInherit {
+  justify-content: inherit;
+}
+
+.justifyEvenly {
+  justify-content: space-evenly;
+}
+
+.justifystart {
+  justify-content: flex-start;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.root {
+  display: flex;
+  position: relative;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    max-width: 1232px;
+    padding: 0 var(--spacing-5);
+  }
+}

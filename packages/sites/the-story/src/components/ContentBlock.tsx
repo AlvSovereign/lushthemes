@@ -7,15 +7,15 @@ import BlockContent, {
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import Img from 'gatsby-image';
 
-import { Typography } from '../gatsby-theme-lushthemes-origin/components/ui';
 import {
   Awards,
   HomeHero,
   MyStoryHero,
   SimpleMedia,
   StoryFooter,
+  Typography,
   WorkExperience,
-} from '../gatsby-theme-lushthemes-origin/components';
+} from 'gatsby-theme-lushthemes-origin';
 
 interface ContentBlockProps {
   blocks: SanityBlockContent;

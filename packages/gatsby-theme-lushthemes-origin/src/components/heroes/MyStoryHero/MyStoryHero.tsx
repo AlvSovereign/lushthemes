@@ -65,4 +65,4 @@ const MyStoryHero = ({
   );
 };
 
-export default MyStoryHero;
+export { MyStoryHero };

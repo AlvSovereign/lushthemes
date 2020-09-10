@@ -1,29 +1,27 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
-import {
-  Children,
+import React, {
   cloneElement,
   Fragment,
-  ReactNode,
   useState,
   ReactElement,
   useEffect,
 } from 'react';
 import { useTransition } from 'react-spring';
+import cx from 'classnames';
 
 import { Row } from '../../ui';
+import styles from './HeaderContainer.module.css';
 
 interface HeaderContainerProps {
   className?: string;
   header: ReactElement;
-  position: 'fixed' | 'relative';
+  variant: 'sticky' | 'default';
   responsiveMenu?: ReactElement;
 }
 
 const HeaderContainer = ({
   className,
   header,
-  position,
+  variant = 'default',
   responsiveMenu,
 }: HeaderContainerProps) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -37,18 +35,21 @@ const HeaderContainer = ({
     console.log('rendered ', showMenu);
   });
 
-  // block body scrolling;
+  // block body scrolling when menu is displayed
   document.body.style.overflow = showMenu ? 'hidden' : 'visible';
 
   return (
     <Fragment>
       <Row
         align='center'
-        className={className}
+        className={cx(
+          styles.headerContainer,
+          variant === 'sticky' && styles.headerSticky,
+          className
+        )}
         direction='row'
         element='header'
-        justify='center'
-        sx={{ height: '60px', variant: `Header.${position}` }}>
+        justify='center'>
         {cloneElement(header, { setShowMenu, showMenu })}
       </Row>
       {transitions.map(
@@ -59,4 +60,4 @@ const HeaderContainer = ({
   );
 };
 
-export default HeaderContainer;
+export { HeaderContainer };

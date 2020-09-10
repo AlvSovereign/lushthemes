@@ -60,4 +60,4 @@ const HomeHero = ({
   );
 };
 
-export default HomeHero;
+export { HomeHero };

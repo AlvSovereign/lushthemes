@@ -5,11 +5,11 @@ export default {
   useBorderBox: true,
   Header,
   shadows: Shadows,
-  breakpoints: ['600px', '768px', '1280px'],
+  breakpoints: ['600px', '1024px', '1280px'],
   space: [0, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64],
   fonts: {
     body:
-      '"Sofia Pro", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },

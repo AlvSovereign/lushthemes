@@ -27,7 +27,7 @@ const HeaderDefault = ({
       className={className}
       direction='row'
       element='div'
-      justify='space-between'
+      justify='between'
       sx={{ flex: 1 }}
       withContainer={true}>
       <Typography
@@ -41,7 +41,7 @@ const HeaderDefault = ({
         align='center'
         direction='row'
         element='div'
-        justify='space-around'
+        justify='around'
         sx={{ display: ['none', 'none', 'flex'] }}>
         {navData.map(({ _id, slug, title }, index, arr) => (
           <Typography
@@ -76,4 +76,4 @@ const HeaderDefault = ({
   );
 };
 
-export default HeaderDefault;
+export { HeaderDefault };
