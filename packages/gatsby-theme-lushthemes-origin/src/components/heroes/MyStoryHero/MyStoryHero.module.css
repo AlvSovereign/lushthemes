@@ -1,0 +1,47 @@
+.container {
+  align-items: unset;
+  background-color: var(--color-silver);
+  flex-direction: column;
+  padding: 100px 0;
+}
+
+.content {
+  margin-bottom: var(--spacing-7);
+}
+
+.contentContainer {
+  display: flex;
+  flex: 1.5;
+  flex-direction: column;
+  padding-bottom: var(--spacing-8);
+}
+
+.cta {
+  align-self: center;
+}
+
+.imageContainer {
+  flex: 1;
+}
+
+.subtitle {
+  margin-bottom: var(--spacing-3);
+}
+
+@media screen and (min-width: 600px) {
+  .contentContainer {
+    padding-bottom: var(--spacing-9);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    align-items: center;
+    flex-direction: row;
+    padding: 120px 0;
+  }
+
+  .contentContainer {
+    padding-right: var(--spacing-9);
+  }
+}

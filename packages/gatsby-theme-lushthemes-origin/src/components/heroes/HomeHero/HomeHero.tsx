@@ -4,6 +4,8 @@ import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
 
 import { Button, Row, Typography } from '../../ui';
+import { RightArrow } from '../../../assets/icons';
+import styles from './HomeHero.module.css';
 
 interface HomeHeroProps {
   cta: string;
@@ -26,33 +28,38 @@ const HomeHero = ({
     <Row
       align='center'
       backgroundImage={fluidImage}
+      className={styles.container}
       direction='row'
       element='section'
-      sx={{
-        background: 'black',
-        height: ['auto', 'auto', 900],
-        py: [100, 100, 120],
-      }}
       withContainer={true}>
-      <Row direction='column' element='div' sx={{ flex: [1, 1, 0.5] }}>
-        <Typography color='white' element='h1' sx={{ mb: 5 }} variant='h1'>
+      <Row className={styles.contentContainer} direction='column' element='div'>
+        <Typography
+          className={styles.text}
+          color='white'
+          element='h1'
+          variant='h1'
+          weight='bold'>
           {title}
         </Typography>
         <Typography
+          className={styles.text}
           color='white'
           element='p'
-          sx={{ mb: 5 }}
-          variant='p'
-          weight='light'>
+          variant='p'>
           {text}
         </Typography>
-        <Typography color='white' element='h4' sx={{ mb: 6 }} variant='h4'>
+        <Typography
+          className={styles.gutter}
+          color='white'
+          element='h4'
+          variant='h4'
+          weight='bold'>
           {endText}
         </Typography>
         <Button
+          className={styles.cta}
           label={cta}
           onClick={onCtaClick}
-          sx={{ alignSelf: 'center' }}
           variant='primary'
         />
       </Row>

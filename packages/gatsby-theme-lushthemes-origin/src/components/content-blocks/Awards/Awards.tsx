@@ -1,7 +1,9 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
+
 import { Row, Typography } from '../../ui';
+import styles from './Awards.module.css';
 
 type Award = {
   award: string;
@@ -19,7 +21,7 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
   return (
     <Row
       align='center'
-      direction={['column', 'column', 'row']}
+      className={styles.container}
       element='section'
       sx={{ backgroundColor: 'black', py: [100, 100, 120] }}
       withContainer={true}>

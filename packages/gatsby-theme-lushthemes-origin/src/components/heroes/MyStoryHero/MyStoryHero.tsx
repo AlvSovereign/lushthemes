@@ -1,9 +1,9 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import Img, { FluidObject } from 'gatsby-image';
+import cx from 'classnames';
 
 import { Button, Row, Typography } from '../../ui';
+import styles from './MyStoryHero.module.css';
 
 interface MyStoryHeroProps {
   className?: string;
@@ -28,37 +28,32 @@ const MyStoryHero = ({
 }: MyStoryHeroProps) => {
   return (
     <Row
-      align={[null, null, 'center']}
-      className={className}
-      direction={['column', 'column', 'row']}
+      className={cx(styles.container, className)}
       element='section'
-      sx={{ backgroundColor: 'silver', py: [100, 100, 120] }}
       withContainer={true}>
-      <div
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          flex: 1.5,
-          pr: [null, null, 9],
-          pb: [8, 9, null],
-        }}>
-        <Typography element='h1' variant='h1'>
+      <div className={styles.contentContainer}>
+        <Typography align='center' element='h1' variant='h1' weight='bold'>
           {title}
         </Typography>
-        <Typography element='h3' sx={{ mb: 3 }} variant='h3'>
+        <Typography
+          align='center'
+          className={styles.subtitle}
+          element='h3'
+          variant='h3'
+          weight='bold'>
           {subtitle}
         </Typography>
-        <Typography element='p' sx={{ mb: 7 }} variant='p'>
+        <Typography className={styles.content} element='p' variant='p'>
           {content}
         </Typography>
         <Button
+          className={styles.cta}
           label={cta}
           onClick={onCtaClick}
-          sx={{ alignSelf: 'center' }}
           variant='secondary'
         />
       </div>
-      <div sx={{ flex: 1, boxShadow: 2 }}>
+      <div className={styles.imageContainer}>
         <Img fluid={fluidImage} />
       </div>
     </Row>

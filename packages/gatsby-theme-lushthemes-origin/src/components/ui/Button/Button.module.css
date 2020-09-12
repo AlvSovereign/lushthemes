@@ -4,7 +4,6 @@
   border-radius: 0;
   border-style: solid;
   border-width: 1px;
-  box-shadow: var(--shadow-medium);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -13,27 +12,18 @@
   letter-spacing: 1px;
   min-width: 50px;
   padding: 0 var(--spacing-5);
-  transition: background-color 0.1s, box-shadow 0.1s;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .button:active {
-  box-shadow: none;
-}
-
-.button:hover {
-  box-shadow: var(--shadow-small);
+  transform: scale(0.98);
 }
 
 .buttonPlain {
   background-color: transparent;
   border-color: transparent;
   border-width: 0;
-  box-shadow: none;
   padding: 0;
-}
-
-.buttonPlain:hover {
-  box-shadow: none;
 }
 
 .buttonPrimary {
@@ -80,6 +70,17 @@
   color: var(--color-white);
 }
 
-.labelWithIcon {
+.iconContainer {
+  align-items: center;
+  display: flex;
+  height: 18px;
+  justify-content: center;
+}
+
+.iconLeft {
   margin-right: var(--spacing-3);
+}
+
+.iconRight {
+  margin-left: var(--spacing-3);
 }

@@ -29,7 +29,12 @@ const HeaderDefault = ({
       element='div'
       justify='between'
       withContainer={true}>
-      <Typography classMName={styles.logo} element='a' href='/' variant='h4'>
+      <Typography
+        className={styles.logo}
+        element='a'
+        href='/'
+        variant='h4'
+        weight='bold'>
         Origin.
       </Typography>
       <Row

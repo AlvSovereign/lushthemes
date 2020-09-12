@@ -2,14 +2,13 @@ import React, { ReactNode } from 'react';
 import cx from 'classnames';
 
 import styles from './Typography.module.css';
-
-type Alignment = 'center' | 'left' | 'right';
+import { capitalise } from '../../../utils/capitalize';
 
 export interface TypographyProps {
   /**
    * Use this to control the elements position
    */
-  align?: Alignment;
+  align?: 'center' | 'left' | 'right';
   /**
    * React children to render
    */
@@ -33,7 +32,7 @@ export interface TypographyProps {
   /**
    * A convenience prop to quickly change font weight
    */
-  weight?: 'bold' | 'light' | 'medium';
+  weight?: 'bold' | 'light' | 'normal';
   /**
    * Any other optional prop that needs to be passed down to the element
    */
@@ -47,7 +46,7 @@ export const Typography = ({
   color = 'black',
   element,
   variant,
-  weight,
+  weight = 'normal',
   ...rest
 }: TypographyProps) => {
   const Element = element;
@@ -61,6 +60,7 @@ export const Typography = ({
         styles[variant],
         styles[color],
         styles[weight],
+        align && styles[`align${capitalise(align)}`],
         element === 'a' && styles.a,
         className
       )}

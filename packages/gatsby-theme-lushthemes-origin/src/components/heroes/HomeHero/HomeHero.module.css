@@ -1,0 +1,32 @@
+.container {
+  background-color: var(--color-black);
+  height: auto;
+  padding: 100px 0;
+}
+
+.contentContainer {
+  flex: 1;
+}
+
+.cta {
+  align-self: center;
+}
+
+.gutter {
+  margin-bottom: var(--spacing-6);
+}
+
+.text {
+  margin-bottom: var(--spacing-5);
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    height: 900px;
+    padding: 120px 0;
+  }
+
+  .contentContainer {
+    flex: 0.6;
+  }
+}

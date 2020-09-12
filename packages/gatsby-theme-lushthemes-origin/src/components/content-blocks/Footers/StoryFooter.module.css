@@ -1,0 +1,17 @@
+.container {
+  align-items: column;
+}
+
+.socialLinksContainer {
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    align-items: row;
+  }
+
+  .socialLinksContainer {
+    justify-content: flex-start;
+  }
+}

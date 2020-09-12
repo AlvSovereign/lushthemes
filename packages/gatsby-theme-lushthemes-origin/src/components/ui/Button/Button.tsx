@@ -55,27 +55,30 @@ export const Button: React.FC<ButtonProps> = ({
         variant === 'plain' && styles.buttonPlain,
         variant === 'primary' && styles.buttonPrimary,
         variant === 'secondary' && styles.buttonSecondary,
-        icon && icon.placement === 'right' && styles.buttonReverse,
+        icon && icon.placement === 'left' && styles.buttonReverse,
         className
       )}
       onClick={onClick}
       onKeyPress={handleKeyPress}>
       {label && (
         <Typography
-          className={cx(
-            styles.label,
-            variant === 'plain' && styles.labelPlain,
-            variant === 'primary' && styles.labelPrimary,
-            variant === 'secondary' && styles.labelSecondary,
-            icon && styles.labelWithIcon,
-            className
-          )}
+          className={cx(styles.label, className)}
+          color={variant === 'primary' ? 'black' : 'white'}
           element='span'
-          variant='small'>
+          variant='small'
+          weight='bold'>
           {label.toUpperCase()}
         </Typography>
       )}
-      {icon && icon.asset}
+      {icon && (
+        <div
+          className={cx(
+            styles.iconContainer,
+            icon.placement === 'left' ? styles.iconLeft : styles.iconRight
+          )}>
+          {icon.asset}
+        </div>
+      )}
     </button>
   );
 };

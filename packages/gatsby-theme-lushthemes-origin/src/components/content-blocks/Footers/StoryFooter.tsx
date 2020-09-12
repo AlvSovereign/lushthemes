@@ -10,6 +10,7 @@ import {
   Instagram,
   Mail,
 } from '../../../assets/icons';
+import styles from './StoryFooter.module.css';
 
 type TAddress = {
   address1?: string;
@@ -70,7 +71,7 @@ const StoryFooter = ({
 
   return (
     <Row
-      direction={['column', 'column', 'row']}
+      className={styles.container}
       element='section'
       sx={{ py: [100, 100, 120] }}
       withContainer={true}>
@@ -89,9 +90,9 @@ const StoryFooter = ({
         </Typography>
         <Row
           align={'center'}
+          className={styles.socialLinksContainer}
           direction='row'
-          element='div'
-          justify={['space-around', 'space-around', 'start']}>
+          element='div'>
           {socialLinks.map((link, index) => (
             <a
               href={link.href}

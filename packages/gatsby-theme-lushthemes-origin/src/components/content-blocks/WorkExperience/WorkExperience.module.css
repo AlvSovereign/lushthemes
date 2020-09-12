@@ -1,0 +1,46 @@
+.container {
+  padding: 100px 0;
+}
+
+.contentContainer {
+  flex-direction: column;
+}
+
+.introText {
+  color: var(--color-grey);
+  flex: 1;
+}
+
+.title {
+  margin-bottom: var(--spacing-3);
+}
+
+.titleContainer {
+  flex: 1;
+  margin-bottom: var(--spacing-8);
+}
+
+.workExperienceContainer {
+  margin: 0;
+}
+
+@media screen and (min-width: 600px) {
+  .workExperienceContainer {
+    margin: -2%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 120px 0;
+  }
+
+  .contentContainer {
+    flex-direction: row;
+  }
+
+  .titleContainer {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}

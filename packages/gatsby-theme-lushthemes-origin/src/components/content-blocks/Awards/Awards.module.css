@@ -1,0 +1,9 @@
+.container {
+  flex-direction: column;
+}
+
+@media screen and (min-width) {
+  .container {
+    flex-direction: row;
+  }
+}

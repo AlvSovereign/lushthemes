@@ -11,15 +11,15 @@ type Justify = 'around' | 'between' | 'center' | 'evenly' | 'inherit' | 'start';
 type Wrap = 'nowrap' | 'wrap';
 
 interface RowProps {
-  align?: Alignment | Alignment[];
+  align?: Alignment;
   backgroundImage?: FluidObject | FluidObject[];
   children: ReactNode;
   className?: string;
   containerClassName?: string;
   display?: string;
-  direction: FlexDirection | FlexDirection[];
+  direction?: FlexDirection;
   element: any; // the string of a HTML element
-  justify?: Justify | Justify[];
+  justify?: Justify;
   withContainer?: boolean;
   wrap?: Wrap | Wrap[];
   [key: string]: any;
@@ -46,19 +46,17 @@ export const Row = ({
     <Element
       className={cx(
         styles.root,
-        {
-          [styles[`align${capitalise(align)}`]]: align,
-          [styles[`display${capitalise(display)}`]]: display,
-          [styles[`direction${capitalise(direction)}`]]: direction,
-          [styles[wrap]]: wrap,
-          [styles[`justify${capitalise(justify)}`]]: justify,
-        },
+        align && styles[`align${capitalise(align)}`],
+        display && styles[`display${capitalise(display)}`],
+        direction && styles[`direction${capitalise(direction)}`],
+        wrap && styles[wrap],
+        justify && styles[`justify${capitalise(justify)}`],
         className
       )}
       {...rest}>
       {backgroundImage && (
-        <div className={styles.backgroundImage}>
-          <Img fluid={backgroundImage} sx={{ height: '100%' }} />
+        <div className={styles.backgroundImageContainer}>
+          <Img className={styles.backgroundImage} fluid={backgroundImage} />
         </div>
       )}
       {withContainer ? (
@@ -66,9 +64,9 @@ export const Row = ({
           className={cx(
             styles.container,
             {
-              [styles[`align${capitalise(align)}`]]: align,
-              [styles[`direction${capitalise(direction)}`]]: direction,
-              [styles[`justify${capitalise(justify)}`]]: justify,
+              [styles[`align${capitalise(align)}`]]: align && align,
+              [styles[`direction${capitalise(direction)}`]]: display && display,
+              [styles[`justify${capitalise(justify)}`]]: justify && justify,
             },
             containerClassName
           )}>

@@ -1,7 +1,9 @@
 /**@jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
+
 import { Row, Typography } from '../../ui';
+import styles from './WorkExperience.module.css';
 
 type TListData = {
   name: string;
@@ -27,35 +29,31 @@ const WorkExperience = ({
   title,
 }: WorkExperienceProps) => (
   <Row
+    className={styles.container}
     direction='column'
     element='section'
-    sx={{ py: [100, 100, 120] }}
     withContainer={true}>
-    <Row
-      direction={['column', 'column', 'row']}
-      element='div'
-      sx={{ display: 'flex', mb: [100, 100, 120] }}>
-      <div sx={{ flex: 1, mb: [8, 8, null] }}>
-        <Typography element='h2' variant='h2' sx={{ mb: 3 }}>
+    <Row className={styles.contentContainer} element='div'>
+      <div className={styles.titleContainer}>
+        <Typography className={styles.title} element='h2' variant='h2'>
           {title}
         </Typography>
-        <a href={downloadUrl} sx={{ variant: 'Typography.a' }}>
-          <Typography
-            element='span'
-            sx={{ fontWeight: 'heading' }}
-            variant='small'>
-            {downloadText}
-          </Typography>
-        </a>
+        <Typography
+          element='a'
+          href={downloadUrl}
+          variant='small'
+          weight='bold'>
+          {downloadText}
+        </Typography>
       </div>
-      <Typography element='p' sx={{ color: 'grey', flex: 1 }} variant='p'>
+      <Typography className={styles.introText} element='p' variant='p'>
         {introText}
       </Typography>
     </Row>
     <Row
+      className={styles.workExperienceContainer}
       direction='row'
       element='div'
-      sx={{ display: 'flex', mx: [null, '-2%', '-2%'] }}
       wrap='wrap'>
       {(listData || []).map((d, index) => (
         <div
