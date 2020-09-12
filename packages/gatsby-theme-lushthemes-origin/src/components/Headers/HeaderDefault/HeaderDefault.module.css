@@ -1,0 +1,39 @@
+.container {
+  flex: 1;
+}
+
+.logo {
+  line-height: 1;
+}
+
+.navCta {
+  box-shadow: none;
+  display: none;
+}
+
+.navLink {
+  margin-right: var(--spacing-3);
+}
+
+.navMenuButton {
+  display: block;
+  margin-right: -12px;
+}
+
+.navLinksContainer {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .navCta {
+    display: block;
+  }
+
+  .navMenuButton {
+    display: none;
+  }
+
+  .navLinksContainer {
+    display: flex;
+  }
+}

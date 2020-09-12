@@ -45,6 +45,10 @@
   border-color: var(--color-silver);
 }
 
+.buttonReverse {
+  flex-direction: row-reverse;
+}
+
 .buttonSecondary {
   background-color: var(--color-black);
 }

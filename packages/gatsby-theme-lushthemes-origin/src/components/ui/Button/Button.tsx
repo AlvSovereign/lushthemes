@@ -8,7 +8,7 @@ type IconPlacement = 'left' | 'right';
 type SvgIcon = ReactNode;
 type Icon = {
   asset: SvgIcon;
-  placement: IconPlacement;
+  placement?: IconPlacement;
 };
 
 export interface ButtonProps {
@@ -55,6 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
         variant === 'plain' && styles.buttonPlain,
         variant === 'primary' && styles.buttonPrimary,
         variant === 'secondary' && styles.buttonSecondary,
+        icon && icon.placement === 'right' && styles.buttonReverse,
         className
       )}
       onClick={onClick}
@@ -70,7 +71,7 @@ export const Button: React.FC<ButtonProps> = ({
             className
           )}
           element='span'
-          variant='span'>
+          variant='small'>
           {label.toUpperCase()}
         </Typography>
       )}

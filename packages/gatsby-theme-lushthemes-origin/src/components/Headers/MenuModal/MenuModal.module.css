@@ -1,0 +1,24 @@
+.container {
+  align-items: center;
+  background-color: var(--color-white);
+  bottom: 0;
+  display: flex;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 60;
+  z-index: 99999;
+}
+
+.modalLink {
+  list-style: none;
+  margin-bottom: var(--spacing-2);
+}
+
+.modalLinksContainer {
+  flex: 1;
+  margin: 0;
+  padding: 0 var(--spacing-5) 0 0;
+}

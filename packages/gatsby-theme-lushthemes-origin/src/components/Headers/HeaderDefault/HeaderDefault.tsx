@@ -1,9 +1,9 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
 import React from 'react';
+import cx from 'classnames';
 
 import { Button, Row, Typography } from '../../ui';
 import { Menu } from '../../../assets/icons';
+import styles from './HeaderDefault.module.css';
 
 interface HeaderDefaultProps {
   className?: string;
@@ -24,52 +24,43 @@ const HeaderDefault = ({
   return (
     <Row
       align='center'
-      className={className}
+      className={cx(styles.container, className)}
       direction='row'
       element='div'
       justify='between'
-      sx={{ flex: 1 }}
       withContainer={true}>
-      <Typography
-        element='a'
-        href='/'
-        sx={{ pl: [4, 4, 0], lineHeight: '1', textDecoration: 'none' }}
-        variant='h4'>
+      <Typography classMName={styles.logo} element='a' href='/' variant='h4'>
         Origin.
       </Typography>
       <Row
         align='center'
+        className={styles.navLinksContainer}
         direction='row'
         element='div'
-        justify='around'
-        sx={{ display: ['none', 'none', 'flex'] }}>
+        justify='around'>
         {navData.map(({ _id, slug, title }, index, arr) => (
           <Typography
+            className={index + 1 !== arr.length && styles.navLink}
             element='a'
             href={slug}
             key={_id}
-            sx={{
-              mr: index + 1 === arr.length ? 0 : 3,
-              variant: 'styles.navLinks',
-            }}
-            variant='span'>
+            variant='small'>
             {title.toUpperCase()}
           </Typography>
         ))}
       </Row>
       <Button
-        sx={{ boxShadow: 'none', display: ['none', 'none', 'block'] }}
+        className={styles.navCta}
         label='Contact Me'
         onClick={() => console.log('clicked')}
         variant='secondary'
       />
       <Button
+        className={styles.navMenuButton}
         icon={{
           asset: <Menu />,
-          placement: 'center',
         }}
         onClick={handleClick}
-        sx={{ display: ['block', 'block', 'none'] }}
         variant='plain'
       />
     </Row>

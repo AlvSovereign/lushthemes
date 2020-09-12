@@ -27,6 +27,7 @@ interface RowProps {
 
 export const Row = ({
   align,
+  animated,
   backgroundImage,
   children,
   className,
