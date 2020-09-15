@@ -1,7 +1,7 @@
 export default {
-  name: 'awardsSection',
+  name: 'awardsModule',
   type: 'object',
-  title: 'Awards Section',
+  title: 'Awards',
   fields: [
     {
       name: 'title',
@@ -20,7 +20,7 @@ export default {
       required: true,
       title: 'Awards list',
       type: 'array',
-      of: [{ type: 'awards' }],
+      of: [{ type: 'reference', to: [{ type: 'awards' }] }],
     },
   ],
 };

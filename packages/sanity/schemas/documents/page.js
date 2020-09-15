@@ -25,10 +25,36 @@ export default {
       min: 70,
       max: 155,
     },
+    // {
+    //   name: 'body',
+    //   title: 'Body',
+    //   type: 'blockContent',
+    // },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'module',
+      title: 'Modules',
+      type: 'array',
+      of: [
+        {
+          type: 'homeHero',
+        },
+        {
+          type: 'myStoryHero',
+        },
+        {
+          type: 'workExperienceModule',
+        },
+        // media
+        {
+          type: 'simpleMedia',
+        },
+        {
+          type: 'awardsModule',
+        },
+        {
+          type: 'myStoryFooter',
+        },
+      ],
     },
     {
       name: 'seoTitle',

@@ -1,7 +1,7 @@
 export default {
-  name: 'storyFooter',
+  name: 'myStoryFooter',
   type: 'object',
-  title: 'Story Footer Section',
+  title: 'Story Footer',
   fields: [
     {
       name: 'title',
@@ -16,11 +16,11 @@ export default {
       type: 'string',
     },
     {
-      name: 'socialLinks',
+      name: 'socials',
       required: true,
-      title: 'Social Like',
+      title: 'Social Links',
       type: 'array',
-      of: [{ type: 'socialLink' }],
+      of: [{ type: 'reference', to: [{ type: 'socialLinks' }] }],
     },
     {
       name: 'contactTitle',
@@ -32,8 +32,8 @@ export default {
       name: 'contact',
       required: true,
       title: 'Contact details',
-      type: 'array',
-      of: [{ type: 'contactLink' }],
+      type: 'reference',
+      to: [{ type: 'contact' }],
     },
     {
       name: 'addressTitle',
@@ -45,8 +45,8 @@ export default {
       name: 'address',
       required: true,
       title: 'Address details',
-      type: 'array',
-      of: [{ type: 'address' }],
+      type: 'reference',
+      to: [{ type: 'address' }],
     },
   ],
 };

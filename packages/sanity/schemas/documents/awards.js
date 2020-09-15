@@ -1,7 +1,7 @@
 export default {
   name: 'awards',
-  type: 'object',
-  title: 'Award',
+  title: 'Awards',
+  type: 'document',
   fields: [
     {
       name: 'award',

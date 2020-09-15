@@ -74,23 +74,5 @@ export default {
       type: 'image',
       options: { hotspot: true },
     },
-    {
-      type: 'homeHero',
-    },
-    {
-      type: 'myStoryHero',
-    },
-    {
-      type: 'workExperienceSection',
-    },
-    {
-      type: 'simpleMedia',
-    },
-    {
-      type: 'awardsSection',
-    },
-    {
-      type: 'storyFooter',
-    },
   ],
 };

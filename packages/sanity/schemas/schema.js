@@ -5,23 +5,29 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // We import object and document schemas
-import author from './author';
 import blockContent from './blockContent';
-import category from './category';
-import post from './post';
-import navigation from './navigation';
-import page from './page';
-import siteMetadata from './site-metadata';
-import homeHero from './contentType/blocks/content/hero/home';
-import myStoryHero from './contentType/blocks/content/hero/my-story';
-import simpleMedia from './contentType/mediaBlock/simpleMedia';
-import workExperienceSection from './contentType/blocks/content/work-experience';
-import workExperience from './contentType/references/work-experience';
-import awards from './contentType/references/awards';
-import awardsSection from './contentType/blocks/content/awards';
-import storyFooter from './contentType/blocks/footers/story-footer';
+import {
+  address,
+  awards,
+  author,
+  category,
+  contact,
+  navigation,
+  page,
+  post,
+  siteMetadata,
+  socialLinks,
+  workExperience,
+} from './documents';
+import {
+  awards as awardsModule,
+  homeHero,
+  myStoryFooter,
+  myStoryHero,
+  simpleMedia,
+  workExperience as workExperienceModule,
+} from './contentModules';
 
-import address from './contentType/references/address';
 import contactLink from './contentType/references/contactLink';
 import socialLink from './contentType/references/socialLink';
 
@@ -32,26 +38,29 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    // The following are document types which will appear
-    // in the studio.
-    post,
+    // documents
+    address,
+    awards,
     author,
     category,
-    page,
+    contact,
     navigation,
+    page,
+    post,
     siteMetadata,
-    // The following are block content components
-    workExperienceSection,
+    socialLinks,
+    workExperience,
+
+    // content modules
+    awardsModule,
     homeHero,
+    myStoryFooter,
     myStoryHero,
+    simpleMedia,
+    workExperienceModule,
+    // The following are block content components
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    workExperience,
-    simpleMedia,
-    awards,
-    awardsSection,
-    storyFooter,
-    address,
     contactLink,
     socialLink,
     blockContent,

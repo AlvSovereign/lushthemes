@@ -1,7 +1,7 @@
 export default {
-  name: 'workExperienceSection',
+  name: 'workExperienceModule',
   type: 'object',
-  title: 'Work Experience Section',
+  title: 'Work Experience',
   fields: [
     {
       name: 'title',
@@ -37,7 +37,7 @@ export default {
 
       title: 'Work Experience List',
       type: 'array',
-      of: [{ type: 'workExperience' }],
+      of: [{ type: 'reference', to: [{ type: 'workExperience' }] }],
     },
   ],
 };
