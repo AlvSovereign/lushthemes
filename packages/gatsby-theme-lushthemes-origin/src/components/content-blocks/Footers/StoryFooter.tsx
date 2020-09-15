@@ -54,7 +54,7 @@ const StoryFooter = ({
   addressTitle,
   contact,
   contactTitle,
-  socialLinks,
+  socials,
   subtitle,
   title,
 }: StoryFooterProps) => {
@@ -93,11 +93,11 @@ const StoryFooter = ({
           className={styles.socialLinksContainer}
           direction='row'
           element='div'>
-          {socialLinks.map((link, index) => (
+          {socials.map((link, index) => (
             <a
               href={link.href}
               key={index}
-              sx={{ mr: index + 1 === socialLinks.length ? 0 : 6 }}>
+              sx={{ mr: index + 1 === socials.length ? 0 : 6 }}>
               {iconMapper[link.name]}
             </a>
           ))}

@@ -21,7 +21,7 @@ interface DefaultProps {
 }
 
 const Default = ({ pageContext }: DefaultProps) => {
-  const pageData = pageContext.data._rawBody;
+  const pageData = pageContext.data._rawModule;
   const data = useStaticQuery(graphql`
     query DefaultTemplateQuery {
       allSanityNavigation {
@@ -76,7 +76,7 @@ const Default = ({ pageContext }: DefaultProps) => {
       <SEO metadata={siteMetadata} />
       <HeaderContainer
         header={<HeaderDefault navData={navData} />}
-        position='fixed'
+        position='sticky'
         responsiveMenu={<MenuModal navData={navData} />}
       />
       <ContentBlock blocks={pageData} />

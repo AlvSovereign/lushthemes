@@ -55,12 +55,13 @@ const serializers = {
         </Typography>
       );
     },
-    awardsSection: ({ node }) => {
+    awardsModule: ({ node }) => {
       const { awardsList, listTitle, title } = node;
 
       return <Awards listTitle={listTitle} list={awardsList} title={title} />;
     },
     homeHero: ({ node }) => {
+      console.log('node: ', node);
       const fluidImage = getFluidGatsbyImage(
         node.image.asset.id,
         { maxWidth: 800 },
@@ -70,6 +71,12 @@ const serializers = {
       return (
         <HomeHero {...node} fluidImage={fluidImage} onCtaClick={() => {}} />
       );
+    },
+    myStoryFooter: ({ node }) => {
+      console.log('node: ', node);
+      const { address, contact, ...rest } = node;
+
+      return <StoryFooter address={address} contact={contact} {...rest} />;
     },
     myStoryHero: ({ node }) => {
       const { content, cta, image, subtitle, title } = node;
@@ -110,14 +117,7 @@ const serializers = {
         </SimpleMedia>
       );
     },
-    storyFooter: ({ node }) => {
-      const { address, contact, ...rest } = node;
-
-      return (
-        <StoryFooter address={address[0]} contact={contact[0]} {...rest} />
-      );
-    },
-    workExperienceSection: ({ node }) => {
+    workExperienceModule: ({ node }) => {
       const {
         downloadText,
         downloadUrl,

@@ -8,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allSanityPage {
         edges {
           node {
-            _rawBody(resolveReferences: { maxDepth: 3 })
+            _rawModule(resolveReferences: { maxDepth: 3 })
             id
             slug {
               current
