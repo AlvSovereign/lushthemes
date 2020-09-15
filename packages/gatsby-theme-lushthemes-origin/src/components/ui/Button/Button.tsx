@@ -62,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
       onKeyPress={handleKeyPress}>
       {label && (
         <Typography
-          className={cx(styles.label, className)}
+          className={styles.label}
           color={variant === 'primary' ? 'black' : 'white'}
           element='span'
           variant='small'

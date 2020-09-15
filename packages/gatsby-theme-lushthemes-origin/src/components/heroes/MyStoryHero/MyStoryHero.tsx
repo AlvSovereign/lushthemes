@@ -28,15 +28,15 @@ const MyStoryHero = ({
 }: MyStoryHeroProps) => {
   return (
     <Row
-      className={cx(styles.container, className)}
+      className={cx(styles.rowContainer, className)}
+      containerClassName={styles.container}
       element='section'
       withContainer={true}>
       <div className={styles.contentContainer}>
-        <Typography align='center' element='h1' variant='h1' weight='bold'>
+        <Typography element='h1' variant='h1' weight='bold'>
           {title}
         </Typography>
         <Typography
-          align='center'
           className={styles.subtitle}
           element='h3'
           variant='h3'
@@ -54,7 +54,7 @@ const MyStoryHero = ({
         />
       </div>
       <div className={styles.imageContainer}>
-        <Img fluid={fluidImage} />
+        <Img className={styles.gatsbyImageContainer} fluid={fluidImage} />
       </div>
     </Row>
   );

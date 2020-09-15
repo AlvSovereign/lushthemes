@@ -1,8 +1,12 @@
+.rowContainer {
+  background-color: var(--color-silver);
+  padding-bottom: 100px;
+  padding-top: 60px;
+}
+
 .container {
   align-items: unset;
-  background-color: var(--color-silver);
   flex-direction: column;
-  padding: 100px 0;
 }
 
 .content {
@@ -11,9 +15,15 @@
 
 .contentContainer {
   display: flex;
-  flex: 1.5;
+  flex: 1;
   flex-direction: column;
   padding-bottom: var(--spacing-8);
+}
+
+/* title & subtitle component */
+.contentContainer > h1,
+.contentContainer > h3 {
+  text-align: center;
 }
 
 .cta {
@@ -22,6 +32,11 @@
 
 .imageContainer {
   flex: 1;
+  height: 100%;
+}
+
+.gatsbyImageContainer {
+  height: 100%;
 }
 
 .subtitle {
@@ -29,19 +44,39 @@
 }
 
 @media screen and (min-width: 600px) {
+  .container {
+    align-items: center;
+    flex-direction: row;
+  }
+
   .contentContainer {
     padding-bottom: var(--spacing-9);
+    padding-right: var(--spacing-3);
+  }
+
+  .imageContainer {
+    padding-left: var(--spacing-3);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
     align-items: center;
-    flex-direction: row;
-    padding: 120px 0;
+    padding-bottom: 120px;
+    padding-top: 120px;
   }
 
   .contentContainer {
+    flex: 1.5;
     padding-right: var(--spacing-9);
+  }
+
+  .contentContainer > h1,
+  .contentContainer > h3 {
+    text-align: left;
+  }
+
+  .cta {
+    align-self: flex-start;
   }
 }
