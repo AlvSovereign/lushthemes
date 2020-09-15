@@ -28,9 +28,6 @@ import {
   workExperience as workExperienceModule,
 } from './contentModules';
 
-import contactLink from './contentType/references/contactLink';
-import socialLink from './contentType/references/socialLink';
-
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -61,8 +58,6 @@ export default createSchema({
     // The following are block content components
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    contactLink,
-    socialLink,
     blockContent,
   ]),
 });
