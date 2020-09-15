@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui';
 import React from 'react';
 
-import { Row, Typography } from '../../ui';
+import { Button, Row, Typography } from '../../ui';
 import styles from './WorkExperience.module.css';
 
 type TListData = {
@@ -14,7 +14,7 @@ type TListData = {
   url: string;
 };
 interface WorkExperienceProps {
-  downloadText: string;
+  downloadCta: string;
   downloadUrl: string;
   introText: string;
   listData: TListData[];
@@ -22,7 +22,7 @@ interface WorkExperienceProps {
 }
 
 const WorkExperience = ({
-  downloadText,
+  downloadCta,
   downloadUrl,
   introText,
   listData,
@@ -30,21 +30,25 @@ const WorkExperience = ({
 }: WorkExperienceProps) => (
   <Row
     className={styles.container}
+    containerClassName={styles.rowContainer}
     direction='column'
     element='section'
     withContainer={true}>
     <Row className={styles.contentContainer} element='div'>
       <div className={styles.titleContainer}>
-        <Typography className={styles.title} element='h2' variant='h2'>
+        <Typography
+          className={styles.title}
+          element='h2'
+          variant='h2'
+          weight='bold'>
           {title}
         </Typography>
-        <Typography
-          element='a'
-          href={downloadUrl}
-          variant='small'
-          weight='bold'>
-          {downloadText}
-        </Typography>
+        <Button
+          className={styles.cta}
+          label={downloadCta}
+          onClick={() => window.open(downloadUrl)}
+          variant='secondary'
+        />
       </div>
       <Typography className={styles.introText} element='p' variant='p'>
         {introText}
@@ -56,46 +60,46 @@ const WorkExperience = ({
       element='div'
       wrap='wrap'>
       {(listData || []).map((d, index) => (
-        <div
-          key={index}
-          sx={{
-            flexBasis: ['auto', '46%', '29%'],
-            mx: [null, '2%', '2%'],
-            pb: 8,
-          }}>
+        <div key={index} className={styles.workExperience}>
           <Typography
+            className={styles.name}
             element='h4'
-            sx={{ fontWeight: 'heading', mb: 1 }}
-            variant='h4'>
+            variant='h4'
+            weight='bold'>
             {d.name}
           </Typography>
-          <Typography element='p' sx={{ color: 'grey', mb: 5 }} variant='small'>
+          <Typography color='grey' element='p' variant='small'>
             {d.duration}
           </Typography>
           <Typography
+            className={styles.position}
             element='p'
-            sx={{ fontWeight: 'heading', mb: 2 }}
-            variant='p'>
+            variant='p'
+            weight='bold'>
             {d.position}
           </Typography>
-          <Typography
-            element='p'
-            sx={{ color: 'grey', fontSize: 0, mb: 2 }}
-            variant='p'>
+          <Typography color='grey' element='p' variant='small'>
             {d.role}
           </Typography>
-          <hr sx={{ border: '1px solid silver' }} />
+          <hr className={styles.hr} />
           <Typography
+            classNme={styles.link}
             element='a'
             href={d.url}
-            sx={{ color: 'grey', fontWeight: 'heading', mr: 2 }}
             target='_blank'
-            variant='small'>
+            variant='small'
+            weight='bold'>
             {d.link}
           </Typography>
         </div>
       ))}
     </Row>
+    <Button
+      className={styles.mobileCta}
+      label={downloadCta}
+      onClick={() => window.open(downloadUrl)}
+      variant='secondary'
+    />
   </Row>
 );
 

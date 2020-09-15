@@ -1,9 +1,22 @@
 .container {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 
 .contentContainer {
   flex-direction: column;
+  margin-bottom: var(--spacing-8);
+}
+
+.cta {
+  display: none;
+}
+
+.duration {
+  margin-bottom: var(--spacing-5);
+}
+
+.hr {
+  border: 0.5px solid silver;
 }
 
 .introText {
@@ -11,13 +24,42 @@
   flex: 1;
 }
 
+.link {
+  text-decoration: underline;
+}
+
+.mobileCta {
+}
+
+.name {
+  margin-bottom: var(--spacing-1);
+}
+
+.position,
+.role {
+  margin-bottom: var(--spacing-2);
+}
+
+.rowContainer {
+  flex-direction: column;
+}
+
 .title {
-  margin-bottom: var(--spacing-3);
+  margin-bottom: var(--spacing-5);
+  text-align: center;
 }
 
 .titleContainer {
+  display: flex;
   flex: 1;
-  margin-bottom: var(--spacing-8);
+  flex-direction: column;
+}
+
+.workExperience {
+  flex-basis: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: var(--spacing-8);
 }
 
 .workExperienceContainer {
@@ -25,13 +67,37 @@
 }
 
 @media screen and (min-width: 600px) {
+  .cta {
+    display: block;
+  }
+
+  .mobileCta {
+    display: none;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .titleContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .workExperience {
+    flex-basis: 46%;
+    margin-left: var(--spacing-3);
+    margin-right: var(--spacing-3);
+  }
+
   .workExperienceContainer {
-    margin: -2%;
+    margin: 0 -12px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
+    flex-direction: column;
     padding: 120px 0;
   }
 
@@ -40,7 +106,13 @@
   }
 
   .titleContainer {
-    flex: 1;
+    display: block;
     margin-bottom: 0;
+  }
+
+  .workExperience {
+    flex-basis: 29%;
+    margin-left: var(--spacing-3);
+    margin-right: var(--spacing-3);
   }
 }

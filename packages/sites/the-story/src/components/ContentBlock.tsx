@@ -73,7 +73,6 @@ const serializers = {
       );
     },
     myStoryFooter: ({ node }) => {
-      console.log('node: ', node);
       const { address, contact, ...rest } = node;
 
       return <StoryFooter address={address} contact={contact} {...rest} />;
@@ -129,7 +128,7 @@ const serializers = {
       return (
         <WorkExperience
           downloadUrl={downloadUrl.asset.url}
-          downloadText={downloadText}
+          downloadCta={downloadText}
           introText={introText}
           listData={listExperience}
           title={title}

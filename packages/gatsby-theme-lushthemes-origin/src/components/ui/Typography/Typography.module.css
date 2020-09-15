@@ -22,8 +22,8 @@
   font-weight: var(--font-weight-bold);
 }
 
-.white {
-  color: var(--color-white);
+.grey {
+  color: var(--color-grey);
 }
 
 .h1 {
@@ -79,6 +79,10 @@
 
 .text {
   line-height: 1.5;
+}
+
+.white {
+  color: var(--color-white);
 }
 
 @media screen and (min-width: 600px) {

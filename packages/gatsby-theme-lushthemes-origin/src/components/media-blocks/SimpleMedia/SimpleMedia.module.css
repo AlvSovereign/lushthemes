@@ -1,0 +1,23 @@
+.captionContainer {
+  background-color: transparent;
+  padding-bottom: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  width: 100%;
+}
+
+.container {
+  background-color: var(--color-silver);
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.videoContainer {
+  margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+}

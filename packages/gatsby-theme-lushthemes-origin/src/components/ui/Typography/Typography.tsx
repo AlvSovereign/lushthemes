@@ -20,7 +20,7 @@ export interface TypographyProps {
   /**
    * A convenience prop to quickly change the color
    */
-  color?: 'black' | 'white';
+  color?: 'black' | 'grey' | 'white';
   /**
    * The HTML element that is rendered to the DOM
    */

@@ -18,10 +18,9 @@ export default {
       type: 'file',
     },
     {
-      name: 'downloadText',
+      name: 'downloadCta',
       required: true,
-
-      title: 'Download text',
+      title: 'Download cta',
       type: 'string',
     },
     {
