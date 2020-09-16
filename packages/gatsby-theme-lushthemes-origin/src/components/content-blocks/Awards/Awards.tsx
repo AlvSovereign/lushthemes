@@ -22,25 +22,32 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
     <Row
       align='center'
       className={styles.container}
+      containerClassName={styles.rowContainer}
       element='section'
-      sx={{ backgroundColor: 'black', py: [100, 100, 120] }}
       withContainer={true}>
-      <Typography element='h2' sx={{ color: 'white', flex: 1 }} variant='h2'>
+      <Typography
+        className={styles.title}
+        color='white'
+        element='h2'
+        variant='h2'
+        weight='bold'>
         {title}
       </Typography>
       <Row
         align='center'
+        className={styles.listContainer}
         direction='column'
-        element='div'
-        sx={{ flex: 1, width: '100%' }}>
+        element='div'>
         <Typography
+          className={styles.listTitle}
+          color='white'
           element='h3'
           sx={{
-            color: 'white',
             mb: 5,
             textAlign: ['center', 'center', 'left'],
           }}
-          variant='h3'>
+          variant='h3'
+          weight='bold'>
           {listTitle}
         </Typography>
         <table sx={{ width: '100%' }}>

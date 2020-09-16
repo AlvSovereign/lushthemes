@@ -1,9 +1,55 @@
 .container {
+  background-color: var(--color-black);
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.listContainer,
+.title {
+  width: 100%;
+}
+
+.listTitle,
+.title {
+  margin-bottom: var(--spacing-5);
+  text-align: center;
+}
+
+.rowContainer {
   flex-direction: column;
 }
 
-@media screen and (min-width) {
-  .container {
+@media screen and (min-width: 600px) {
+  .listContainer {
+    flex: 1;
+  }
+
+  .rowContainer {
     flex-direction: row;
+  }
+
+  .title {
+    flex: 0.6;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+
+  .listContainer,
+  .title {
+    flex: 1;
+  }
+
+  .listTitle {
+    text-align: left;
+  }
+
+  .title {
+    text-align: left;
   }
 }

@@ -56,6 +56,10 @@
   margin-bottom: var(--spacing-6);
 }
 
+.italic {
+  font-style: italic;
+}
+
 .light {
   font-weight: var(--font-weight-light);
 }

@@ -26,6 +26,10 @@ export interface TypographyProps {
    */
   element: any; // the string of a HTML element
   /**
+   * the type of text you need
+   */
+  type?: 'italic';
+  /**
    * The variant of text you need that will control the text styling
    */
   variant: 'hero' | 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'small';
@@ -45,6 +49,7 @@ export const Typography = ({
   className,
   color = 'black',
   element,
+  type,
   variant,
   weight = 'normal',
   ...rest
@@ -60,6 +65,7 @@ export const Typography = ({
         styles[variant],
         styles[color],
         styles[weight],
+        styles[type],
         align && styles[`align${capitalise(align)}`],
         element === 'a' && styles.a,
         className

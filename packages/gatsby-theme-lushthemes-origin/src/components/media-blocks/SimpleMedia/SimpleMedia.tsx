@@ -30,7 +30,7 @@ const SimpleMedia = ({ caption, children }: SimpleMediaProps) => (
           direction='column'
           element='figcaption'
           justify='center'>
-          <Typography color='black' element='p' variant='p'>
+          <Typography color='black' element='p' type='italic' variant='p'>
             {caption}
           </Typography>
         </Row>
