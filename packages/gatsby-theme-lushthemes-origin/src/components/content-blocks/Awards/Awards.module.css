@@ -19,6 +19,21 @@
   flex-direction: column;
 }
 
+.table {
+  width: 100%;
+}
+
+.tabelCell,
+.tableRow {
+  flex: 1;
+}
+
+.tableRow {
+  border-bottom: solid 1px var(--color-silver);
+  padding-bottom: var(--spacing-4);
+  padding-top: var(--spacing-4);
+}
+
 @media screen and (min-width: 600px) {
   .listContainer {
     flex: 1;

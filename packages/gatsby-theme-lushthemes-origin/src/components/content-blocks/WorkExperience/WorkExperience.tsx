@@ -1,5 +1,3 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
 import React from 'react';
 
 import { Button, Row, Typography } from '../../ui';
@@ -59,7 +57,7 @@ const WorkExperience = ({
       direction='row'
       element='div'
       wrap='wrap'>
-      {(listData || []).map((d, index) => (
+      {listData.map((d, index) => (
         <div key={index} className={styles.workExperience}>
           <Typography
             className={styles.name}

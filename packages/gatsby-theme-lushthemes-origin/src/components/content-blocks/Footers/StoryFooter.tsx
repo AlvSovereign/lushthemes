@@ -1,6 +1,5 @@
-/**@jsx jsx */
-import { jsx } from 'theme-ui';
 import React from 'react';
+import cx from 'classnames';
 
 import { Button, Row, Typography } from '../../ui';
 import {
@@ -28,7 +27,7 @@ type TContact = {
 
 type TSocialLinks = {
   name: string;
-  href: string;
+  url: string;
 };
 
 interface StoryFooterProps {
@@ -36,7 +35,7 @@ interface StoryFooterProps {
   addressTitle?: string;
   contact?: TContact;
   contactTitle?: string;
-  socialLinks?: TSocialLinks[];
+  socials?: TSocialLinks[];
   subtitle?: string;
   title?: string;
 }
@@ -72,139 +71,102 @@ const StoryFooter = ({
   return (
     <Row
       className={styles.container}
+      containerClassName={styles.rowContainer}
       element='section'
-      sx={{ py: [100, 100, 120] }}
       withContainer={true}>
-      <Row direction='column' element='div' sx={{ flex: 1, mb: [8, 8, 0] }}>
+      <Row className={styles.titleContainer} direction='column' element='div'>
         <Typography
+          className={styles.title}
           element='h2'
-          sx={{ mb: 6, textAlign: ['center', 'center', 'left'] }}
-          variant='h2'>
+          variant='h2'
+          weight='bold'>
           {title}
         </Typography>
         <Typography
-          element='h4'
-          sx={{ mb: [8, 8, 10], textAlign: ['center', 'center', 'left'] }}
-          variant='h4'>
+          className={styles.subtitle}
+          element='p'
+          variant='p'
+          weight='bold'>
           {subtitle}
         </Typography>
         <Row
-          align={'center'}
+          align='center'
           className={styles.socialLinksContainer}
           direction='row'
           element='div'>
-          {socials.map((link, index) => (
+          {socials.map((link, index, arr) => (
             <a
-              href={link.href}
+              className={cx(index + 1 !== arr.length && styles.socialLink)}
+              href={link.url}
               key={index}
-              sx={{ mr: index + 1 === socials.length ? 0 : 6 }}>
-              {iconMapper[link.name]}
+              target='_blank'>
+              {iconMapper[link.name.toLowerCase()]}
             </a>
           ))}
         </Row>
       </Row>
       <Row
         align='center'
+        className={styles.detailsContainer}
         direction='column'
         element='div'
-        justify='center'
-        sx={{ flex: 1 }}>
+        justify='center'>
         <Row
           align='center'
+          className={styles.detailsRow}
           direction='row'
           element='div'
-          justify='center'
-          sx={{ flex: 1, mb: 6, width: '100%' }}>
+          justify='center'>
           <Row
             align='center'
+            className={styles.contactDetailsContainer}
             direction='column'
-            element='div'
-            sx={{ flex: 1, height: '100%' }}>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ fontWeight: 'heading' }}
-              variant='p'>
+            element='div'>
+            <Typography align='center' element='h5' variant='p' weight='bold'>
               {contactTitle}
             </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
+            <Typography align='center' color='grey' element='h5' variant='p'>
               {email}
             </Typography>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ color: 'grey' }}
-              variant='p'>
+            <Typography align='center' color='grey' element='h5' variant='p'>
               {phone}
             </Typography>
           </Row>
           <Row
             align='center'
+            className={styles.contactDetailsContainer}
             direction='column'
-            element='div'
-            sx={{ flex: 1, height: '100%' }}>
-            <Typography
-              align='center'
-              element='h5'
-              sx={{ fontWeight: 'heading' }}
-              variant='p'>
+            element='div'>
+            <Typography align='center' element='h5' variant='p' weight='bold'>
               {addressTitle}
             </Typography>
             {address1 && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {address1}
               </Typography>
             )}
             {address2 && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {address2}
               </Typography>
             )}
             {address3 && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {address3}
               </Typography>
             )}
             {city && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {city}
               </Typography>
             )}
             {district && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {district}
               </Typography>
             )}
             {postcode && (
-              <Typography
-                align='center'
-                element='h5'
-                sx={{ color: 'grey' }}
-                variant='p'>
+              <Typography align='center' color='grey' element='h5' variant='p'>
                 {postcode}
               </Typography>
             )}

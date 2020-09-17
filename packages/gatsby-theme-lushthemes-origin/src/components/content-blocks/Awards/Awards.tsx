@@ -42,32 +42,35 @@ const Awards = ({ list, listTitle, title }: AwardsProps) => {
           className={styles.listTitle}
           color='white'
           element='h3'
-          sx={{
-            mb: 5,
-            textAlign: ['center', 'center', 'left'],
-          }}
           variant='h3'
           weight='bold'>
           {listTitle}
         </Typography>
-        <table sx={{ width: '100%' }}>
+        <table className={styles.table}>
           <tbody>
             {list.map((l, index) => (
               <Row
                 align='center'
-                key={index}
+                className={styles.tableRow}
                 direction='row'
+                key={index}
                 element='tr'
-                justify='between'
-                sx={{
-                  color: 'white',
-                  flex: 1,
-                  borderBottom: 'solid 1px silver',
-                  py: 4,
-                }}>
-                <td sx={{ flex: 1 }}>{l.award}</td>
-                <td sx={{ flex: 1 }}>{l.awardedBy}</td>
-                <td>{l.date}</td>
+                justify='between'>
+                <td className={styles.tabelCell}>
+                  <Typography color='white' element='p' variant='p'>
+                    {l.award}
+                  </Typography>
+                </td>
+                <td className={styles.tabelCell}>
+                  <Typography color='white' element='p' variant='p'>
+                    {l.awardedBy}
+                  </Typography>
+                </td>
+                <td>
+                  <Typography color='white' element='p' variant='p'>
+                    {l.date}
+                  </Typography>
+                </td>
               </Row>
             ))}
           </tbody>
