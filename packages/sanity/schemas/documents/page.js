@@ -1,4 +1,7 @@
+import { GrDocument } from 'react-icons/gr';
+
 export default {
+  icon: GrDocument,
   name: 'page',
   title: 'Page',
   type: 'document',
@@ -41,6 +44,8 @@ export default {
         {
           type: 'myStoryHero',
         },
+        //features
+        { type: 'featuresModule' },
         {
           type: 'workExperienceModule',
         },

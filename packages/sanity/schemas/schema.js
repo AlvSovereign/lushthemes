@@ -10,8 +10,8 @@ import {
   address,
   awards,
   author,
-  category,
   contact,
+  feature,
   navigation,
   page,
   post,
@@ -21,6 +21,7 @@ import {
 } from './documents';
 import {
   awards as awardsModule,
+  features as featuresModule,
   homeHero,
   myStoryFooter,
   myStoryHero,
@@ -37,10 +38,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // documents
     address,
-    awards,
     author,
-    category,
+    awards,
     contact,
+    feature,
     navigation,
     page,
     post,
@@ -50,6 +51,7 @@ export default createSchema({
 
     // content modules
     awardsModule,
+    featuresModule,
     homeHero,
     myStoryFooter,
     myStoryHero,

@@ -1,4 +1,7 @@
+import { FaRegAddressCard } from 'react-icons/fa';
+
 export default {
+  icon: FaRegAddressCard,
   name: 'address',
   type: 'document',
   title: 'Address',

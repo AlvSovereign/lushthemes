@@ -1,4 +1,7 @@
+import { MdContactMail } from 'react-icons/md';
+
 export default {
+  icon: MdContactMail,
   name: 'contact',
   type: 'document',
   title: 'Contact',

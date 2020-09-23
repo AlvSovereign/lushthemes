@@ -1,8 +1,8 @@
 import address from './address';
 import awards from './awards';
 import author from './author';
-import category from './category';
 import contact from './contact';
+import feature from './feature';
 import navigation from './navigation';
 import page from './page';
 import post from './post';
@@ -14,8 +14,8 @@ export {
   address,
   awards,
   author,
-  category,
   contact,
+  feature,
   navigation,
   page,
   post,

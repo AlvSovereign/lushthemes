@@ -1,4 +1,7 @@
+import { RiDatabase2Fill } from 'react-icons/ri';
+
 export default {
+  icon: RiDatabase2Fill,
   name: 'siteMetadata',
   title: 'Site metadata',
   type: 'document',

@@ -1,4 +1,7 @@
+import { GrWorkshop } from 'react-icons/gr';
+
 export default {
+  icon: GrWorkshop,
   name: 'workExperience',
   type: 'document',
   title: 'Work Experience',

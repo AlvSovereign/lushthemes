@@ -1,4 +1,7 @@
+import { FaAward } from 'react-icons/fa';
+
 export default {
+  icon: FaAward,
   name: 'awards',
   title: 'Awards',
   type: 'document',
